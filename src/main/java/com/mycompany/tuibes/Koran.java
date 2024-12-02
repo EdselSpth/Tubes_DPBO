@@ -26,6 +26,7 @@ public class Koran extends Book {
         System.out.println("Tanggal terbit : " + this.tanggalCetak);
         System.out.println("Rating : " + super.rating);
         System.out.println("Harga : " + super.getHarga());
+        System.out.println("test");
     }
     
 }
