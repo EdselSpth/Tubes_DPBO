@@ -9,20 +9,19 @@ package com.mycompany.tuibes;
  * @author りおん塩田
  */
 public class Pembelian {
-    private String idPembelian;
-    private String tanggalPembelian;
-    private Book book;
-    
-    public void showstruk(){
-       
+    protected String IDPembelian;
+    protected String tanggalPembelian;
+
+    public void showStruk() {
+        System.out.println("ID Pembelian: " + IDPembelian);
+        System.out.println("Tanggal Pembelian: " + tanggalPembelian);
     }
-    
-    public void setIdPembelian(String idPembelian) {
-        this.idPembelian = idPembelian;
+
+    public void setIDPembelian(String IDPembelian) {
+        this.IDPembelian = IDPembelian;
     }
-    
-    public double totalHarga(){
+
+    public int totalHarga() {
         return 0;
     }
-    
 }
