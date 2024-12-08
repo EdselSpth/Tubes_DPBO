@@ -11,9 +11,10 @@ package com.mycompany.tuibes;
 public class Pembelian {
     private String idPembelian;
     private String tanggalPembelian;
+    private Book book;
     
     public void showstruk(){
-        
+       
     }
     
     public void setIdPembelian(String idPembelian) {
