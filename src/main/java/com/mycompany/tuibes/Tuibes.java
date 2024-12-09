@@ -4,6 +4,8 @@
 
 package com.mycompany.tuibes;
 
+import java.util.Scanner;
+
 /**
  *
  * @author りおん塩田
@@ -11,6 +13,6 @@ package com.mycompany.tuibes;
 public class Tuibes {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
     }
 }

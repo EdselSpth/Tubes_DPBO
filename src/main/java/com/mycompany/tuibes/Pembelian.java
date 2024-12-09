@@ -13,10 +13,10 @@ public class Pembelian {
     private String tanggalPembelian;
     private Book book;
     
-    public void showstruk(){
-       
+    public void showstruk(String namaBuku){
+        
     }
-    
+   
     public void setIdPembelian(String idPembelian) {
         this.idPembelian = idPembelian;
     }
