@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class Account {
     Scanner s = new Scanner(System.in);
-    Admin A;
+    Admin A = new Admin();
     public void LoginMenu(){
         System.out.println("===========================================================");
         System.out.println("\t Pilih Menu Pengguna");

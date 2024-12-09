@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Tuibes {
 
     public static void main(String[] args) {
-        Account a = null;
+        Account a = new Account();
         a.Login();
     }
 }
