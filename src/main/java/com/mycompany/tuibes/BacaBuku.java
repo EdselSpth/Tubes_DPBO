@@ -12,7 +12,7 @@ public class BacaBuku {
     private String tanggalTerakhirBaca;
     
     public void bacaBuku(){
-        
+        jassfusgbks;
     }
     
     public void searchBuku(){
