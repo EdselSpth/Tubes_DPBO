@@ -31,7 +31,9 @@ public class Account {
             case 1:
                 String usernameBenar = "Admin123";
                 String passwordBenar = "AyamGorengEnak1309";
+                System.out.print("Username : ");
                 username = s.nextLine();
+                System.out.println("Password : ");
                 password = s.nextLine();
                 if (username.equalsIgnoreCase(usernameBenar) && password.equalsIgnoreCase(passwordBenar)){
                     A.menuAdmin();

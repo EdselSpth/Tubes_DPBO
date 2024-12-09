@@ -10,9 +10,10 @@ package com.mycompany.tuibes;
  */
 public class BacaBuku {
     private String tanggalTerakhirBaca;
+    Book book = new Book();
     
     public void bacaBuku(){
-        jassfusgbks;
+        
     }
     
     public void searchBuku(){

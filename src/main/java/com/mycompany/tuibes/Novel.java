@@ -28,4 +28,11 @@ public class Novel extends Book{
         System.out.println("Rating : " + super.rating);
         System.out.println("Harga : " + super.getHarga());
     }
+
+    @Override
+    public String toString() {
+        return super.getIdBuku() + super.getJudulBuku() + super.namaPenulis + super.namaPenerbit + super.Kategori + this.genreNovel + super.tahunTerbit + super.rating + super.getHarga();
+    }
+    
+    
 }
