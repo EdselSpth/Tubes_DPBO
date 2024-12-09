@@ -14,11 +14,10 @@ public class Account {
     Scanner s = new Scanner(System.in);
     Admin A;
     public void LoginMenu(){
-        
         System.out.println("===========================================================");
-        System.out.println("Pilih Menu Pengguna");
-        System.out.println("1. Admin");
-        System.out.println("1. Pengguna");
+        System.out.println("\t Pilih Menu Pengguna");
+        System.out.println("\t 1. Admin");
+        System.out.println("\t 2. Pengguna");
         System.out.println("===========================================================");
     }
     
