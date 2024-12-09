@@ -51,7 +51,7 @@ public class Account {
                 password = s.nextLine();
                 if (username.equalsIgnoreCase(usernameUserBenar) && password.equalsIgnoreCase(passwordUserBenar)){
                     A.menuAdmin();
-                    
+                    A.adminMenuUsing();
                 } else if (username.equalsIgnoreCase(usernameUserBenar) && !(password.equalsIgnoreCase(passwordUserBenar))){
                     System.out.println("Password yang dimasukkan salah");
                 } else if (!(username.equalsIgnoreCase(usernameUserBenar)) && username.equalsIgnoreCase(passwordUserBenar)){

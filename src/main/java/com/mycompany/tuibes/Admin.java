@@ -20,6 +20,25 @@ public class Admin  {
         System.out.println("===========================================================");
     }
     
+    public void adminMenuUsing(){
+        System.out.print("Pilih Menu : ");
+        int pilihan = s.nextInt();
+        switch(pilihan){
+            case 1:
+                menuKategoriBuku();
+                tambahBuku();
+            case 2:
+            
+            case 3:
+            
+            case 4:
+                
+            default:
+                System.out.println("Pilihan Menu Tidak Ada");
+        }
+        
+    }
+    
     public void tambahBuku(){
         System.out.println("");
         menuKategoriBuku();
