@@ -42,7 +42,14 @@ public abstract class Book implements IBook{
         return harga;
     }
 
-    public abstract void printInfoBuku();
-    
+    public void printInfoBuku(){
+        System.out.println("Judul: " + judulBuku);
+        System.out.println("Penulis: " + namaPenulis);
+        System.out.println("Harga: Rp " + harga);
+        System.out.println("Tahun Terbit: " + tahunTerbit);
+        System.out.println("Penerbit: " namaPenerbit);
+        System.out.println("ISBN: " + idBuku);
+        System.out.println("Rating: " rating);
+    }
     
 }
