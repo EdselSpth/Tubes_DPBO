@@ -8,7 +8,7 @@ package com.mycompany.tuibes;
  *
  * @author りおん塩田
  */
-public abstract class Book {
+public abstract class Book implements IBook{
     private String judulBuku;
     private String idBuku;
     protected String namaPenulis;
