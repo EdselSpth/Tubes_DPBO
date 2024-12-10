@@ -30,7 +30,7 @@ public abstract class Book implements IBook{
         this.rating = rating;
     }
 
-    public String getJudulBuku() {
+    public String getTitle() {
         return judulBuku;
     }
 
