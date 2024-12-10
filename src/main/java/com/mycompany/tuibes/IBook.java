@@ -1,6 +1,6 @@
 public interface IBook {
-    String getTitle();
-    double getPrice();
+    String getJudulBuku();
+    double getHarga();
     String getCategory();
-    void displayBookDetails();
+    void printInfoBuku();
 }
