@@ -11,8 +11,8 @@ package com.mycompany.tuibes;
 public class Koran extends Book {
     private String tanggalCetak;
 
-    public Koran(String judulBuku, String idBuku, String namaPenulis, String namaPenerbit, int harga, String Kategori, int tahunTerbit, double rating, String tanggalCetak) {
-        super(judulBuku, idBuku, namaPenulis, namaPenerbit, harga, Kategori, 0, rating);
+    public Koran(String tanggalCetak, String judulBuku, String idBuku, String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating) {
+        super(judulBuku, idBuku, namaPenulis, namaPenerbit, harga, 2024, rating, "Koran");
         this.tanggalCetak = tanggalCetak;
     }
     
@@ -22,10 +22,15 @@ public class Koran extends Book {
         System.out.println("Judul Buku : " + super.getJudulBuku());
         System.out.println("Nama Penulis : " + super.namaPenulis);
         System.out.println("Penerbit : " + super.namaPenerbit);
-        System.out.println("Kategori : " + super.Kategori);
-        System.out.println("Tanggal terbit : " + this.tanggalCetak);
+        System.out.println("Kategori : " + super.kategori);
+        System.out.println("Tanggal Cetak : " + this.tanggalCetak);
         System.out.println("Rating : " + super.rating);
+        System.out.println("Tahun Terbit : " + super.tahunTerbit);
         System.out.println("Harga : " + super.getHarga());
+    }
+
+    public String getTanggalCetak() {
+        return tanggalCetak;
     }
     
 }

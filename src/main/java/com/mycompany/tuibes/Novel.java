@@ -9,11 +9,11 @@ package com.mycompany.tuibes;
  * @author りおん塩田
  */
 public class Novel extends Book{
-    private String genreNovel;
+    private String genre;
 
-    public Novel(String judulBuku, String idBuku, String namaPenulis, String namaPenerbit, int harga, String Kategori, int tahunTerbit, double rating, String genreNovel) {
-        super(judulBuku, idBuku, namaPenulis, namaPenerbit, harga, Kategori, tahunTerbit, rating);
-        this.genreNovel = genreNovel;
+    public Novel(String genre, String judulBuku, String idBuku, String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating) {
+        super(judulBuku, idBuku, namaPenulis, namaPenerbit, harga, tahunTerbit, rating, "Novel");
+        this.genre = genre;
     }
     
     @Override
@@ -22,17 +22,15 @@ public class Novel extends Book{
         System.out.println("Judul Buku : " + super.getJudulBuku());
         System.out.println("Nama Penulis : " + super.namaPenulis);
         System.out.println("Penerbit : " + super.namaPenerbit);
-        System.out.println("Kategori : " + super.Kategori);
-        System.out.println("Genre Novel : " + this.genreNovel);
-        System.out.println("Tahun Terbit : " + super.tahunTerbit);
+        System.out.println("Kategori : " + super.kategori);
+        System.out.println("Genre : " + this.genre);
         System.out.println("Rating : " + super.rating);
+        System.out.println("Tahun Terbit : " + super.tahunTerbit);
         System.out.println("Harga : " + super.getHarga());
     }
 
-    @Override
-    public String toString() {
-        return super.getIdBuku() + super.getJudulBuku() + super.namaPenulis + super.namaPenerbit + super.Kategori + this.genreNovel + super.tahunTerbit + super.rating + super.getHarga();
+    public String getGenre() {
+        return genre;
     }
-    
     
 }

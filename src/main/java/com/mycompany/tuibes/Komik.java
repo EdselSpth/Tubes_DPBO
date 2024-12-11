@@ -9,23 +9,30 @@ package com.mycompany.tuibes;
  * @author りおん塩田
  */
 public class Komik extends Book{
-    private String genreKomik;
+    private String genre;
 
-    public Komik(String judulBuku, String idBuku, String namaPenulis, String namaPenerbit, int harga, String Kategori, int tahunTerbit, double rating, String genreKomik) {
-        super(judulBuku, idBuku, namaPenulis, namaPenerbit, harga, Kategori, tahunTerbit, rating);
-        this.genreKomik = genreKomik;
+    public Komik(String genre, String judulBuku, String idBuku, String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating) {
+        super(judulBuku, idBuku, namaPenulis, namaPenerbit, harga, tahunTerbit, rating, "Komik");
+        this.genre = genre;
     }
+
     
+    
+    @Override
     public void printInfoBuku(){
         System.out.println("ID Buku : " + super.getIdBuku());
         System.out.println("Judul Buku : " + super.getJudulBuku());
         System.out.println("Nama Penulis : " + super.namaPenulis);
         System.out.println("Penerbit : " + super.namaPenerbit);
-        System.out.println("Kategori : " + super.Kategori);
-        System.out.println("Genre : " + this.genreKomik);
+        System.out.println("Kategori : " + super.kategori);
+        System.out.println("Genre : " + this.genre);
         System.out.println("Rating : " + super.rating);
         System.out.println("Tahun Terbit : " + super.tahunTerbit);
         System.out.println("Harga : " + super.getHarga());
+    }
+
+    public String getGenre() {
+        return genre;
     }
     
 }

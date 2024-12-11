@@ -1,6 +1,9 @@
+package com.mycompany.tuibes;
+
 public interface IBook {
     String getJudulBuku();
-    double getHarga();
-    String getCategory();
+    int getHarga();
+    String getKategori();
     void printInfoBuku();
 }
+

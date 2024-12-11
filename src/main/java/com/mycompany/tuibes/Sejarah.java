@@ -13,12 +13,13 @@ public class Sejarah extends Book {
     private String lokasiSejarah;
     private double discountRate = 0.2;
 
-    public Sejarah(String judulBuku, String idBuku, String namaPenulis, String namaPenerbit, int harga, String Kategori, int tahunTerbit, double rating, String periodeSejarah, String lokasiSejarah) {
-        super(judulBuku, idBuku, namaPenulis, namaPenerbit, harga, Kategori, tahunTerbit, rating);
+    public Sejarah(String periodeSejarah, String lokasiSejarah, String judulBuku, String idBuku, String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating) {
+        super(judulBuku, idBuku, namaPenulis, namaPenerbit, harga, tahunTerbit, rating, "Sejarah");
         this.periodeSejarah = periodeSejarah;
         this.lokasiSejarah = lokasiSejarah;
-        
     }
+
+    
     
     public double hargaDiskon(){
         return super.getHarga() * this.discountRate;
@@ -30,17 +31,30 @@ public class Sejarah extends Book {
         System.out.println("Judul Buku : " + super.getJudulBuku());
         System.out.println("Nama Penulis : " + super.namaPenulis);
         System.out.println("Penerbit : " + super.namaPenerbit);
-        System.out.println("Kategori : " + super.Kategori);
-        System.out.println("Tahun Terbit : " + super.tahunTerbit);
-        System.out.println("Rating : " + super.rating);
+        System.out.println("Kategori : " + super.kategori);
         System.out.println("Periode Sejarah : " + this.periodeSejarah);
-        System.out.println("Lokasi Sejarah : " + this.lokasiSejarah);
+        System.out.println("Wilayah Sejarah : " + this.lokasiSejarah);
+        System.out.println("Rating : " + super.rating);
         System.out.println("Tahun Terbit : " + super.tahunTerbit);
-        System.out.println("Harga : " + hargaDiskon());
+        System.out.println("Harga : " + super.getHarga());
     }
     
     public double dapatHarga(){
         return hargaDiskon();
     }
+
+    public String getPeriodeSejarah() {
+        return periodeSejarah;
+    }
+
+    public String getLokasiSejarah() {
+        return lokasiSejarah;
+    }
+
+    public double getDiscountRate() {
+        return discountRate;
+    }
+    
+    
     
 }

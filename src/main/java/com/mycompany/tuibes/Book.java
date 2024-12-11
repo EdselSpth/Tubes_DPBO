@@ -8,29 +8,30 @@ package com.mycompany.tuibes;
  *
  * @author りおん塩田
  */
-public abstract class Book implements IBook{
+public class Book implements IBook{
     private String judulBuku;
     private String idBuku;
     protected String namaPenulis;
     protected String namaPenerbit;
     private int harga;
-    protected String Kategori;
     protected int tahunTerbit;
     protected double rating;
+    protected String kategori;
     protected boolean license = false;
 
-    public Book(String judulBuku, String idBuku, String namaPenulis, String namaPenerbit, int harga, String Kategori, int tahunTerbit, double rating) {
+    public Book(String judulBuku, String idBuku, String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating, String kategori) {
         this.judulBuku = judulBuku;
         this.idBuku = idBuku;
         this.namaPenulis = namaPenulis;
         this.namaPenerbit = namaPenerbit;
         this.harga = harga;
-        this.Kategori = Kategori;
         this.tahunTerbit = tahunTerbit;
         this.rating = rating;
+        this.kategori = kategori;
     }
 
-    public String getTitle() {
+    @Override
+    public String getJudulBuku() {
         return judulBuku;
     }
 
@@ -38,18 +39,27 @@ public abstract class Book implements IBook{
         return idBuku;
     }
 
+    @Override
     public int getHarga() {
         return harga;
     }
 
+    @Override
     public void printInfoBuku(){
         System.out.println("Judul: " + judulBuku);
         System.out.println("Penulis: " + namaPenulis);
         System.out.println("Harga: Rp " + harga);
         System.out.println("Tahun Terbit: " + tahunTerbit);
-        System.out.println("Penerbit: " namaPenerbit);
+        System.out.println("Penerbit: " + namaPenerbit);
         System.out.println("ISBN: " + idBuku);
-        System.out.println("Rating: " rating);
+        System.out.println("Rating: " + rating);
     }
+
+    @Override
+    public String getKategori() {
+        return kategori;
+    }
+    
+    
     
 }
