@@ -12,7 +12,7 @@ public class Perpustakaan {
     private Book[] listBuku;
     
     public void showBuku(){
-        
+        System.out.println("EEK");
     }
     
     public void tambahBuku(){
