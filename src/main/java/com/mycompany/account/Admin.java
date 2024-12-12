@@ -21,7 +21,7 @@ public class Admin implements IAccount {
     }
 
     @Override
-    public void login() {
+    public void loginValidation() {
         boolean passwordValidation = false;
         System.out.print("> Username : ");
         String username = S.nextLine();
@@ -32,6 +32,10 @@ public class Admin implements IAccount {
                 passwordValidation = true;
             }
         }
+    }
+    
+    public void menuInside(){
+        
     }
     
     
