@@ -37,6 +37,11 @@ public class Admin implements IAccount {
     public void menuInside(){
         
     }
+
+    @Override
+    public void insideMenu() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     
 }
