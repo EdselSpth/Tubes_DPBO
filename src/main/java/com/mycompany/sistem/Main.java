@@ -9,7 +9,7 @@ package com.mycompany.sistem;
  *
  * @author りおん塩田
  */
-public class Tuibes {
+public class Main {
 
     public static void main(String[] args) {
         

@@ -5,6 +5,7 @@
 package com.mycompany.account;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -12,6 +13,7 @@ import java.util.ArrayList;
  */
 public class User implements IAccount {
     private ArrayList<Account> userList;
+    Scanner S = new Scanner(System.in);
     
     public User(){
         userList = new ArrayList<>();
@@ -22,8 +24,20 @@ public class User implements IAccount {
 
     @Override
     public void login() {
-        
+        System.out.print("> Username : ");
+        String username = S.nextLine();
+        System.out.print("> Password : ");
+        String password = S.nextLine();
+        for (int i = 0; i < userList.size(); i++){
+            try {
+                if (username.equals(userList.get(i).getUsername()) && password.equals(userList.get(i).getPassword())){
+                    
+                } else {
+                    throw new Exception("Username atau Password yang anda masukkan salah");
+                }
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
     }
-    
-    
 }
