@@ -36,6 +36,7 @@ public class Admin implements IAccount {
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());
             }
+            System.out.println("");
         }
     }
     
