@@ -29,7 +29,19 @@ public class Menu {
         System.out.println("1. Tambah Data Buku"); 
         System.out.println("2. Hapus Data Buku");
         System.out.println("3. Cek Riwayat Transaksi");
-        System.out.println("4. Edit Data Bukuk");
+        System.out.println("4. Edit Data Buku");
+    }
+    
+    public void menuUser(){
+        headerFooter();
+        System.out.println("1. Tampilkan E-Book");
+        System.out.println("2. Cari E-Book");
+        System.out.println("3. Perpustakaan");
+    }
+    
+    public void menuBacaBuku(){
+        System.out.println("1. Komentar");
+        System.out.println("2. Kembali ke menu");
     }
     
     public void FormatBukuPrint(){
