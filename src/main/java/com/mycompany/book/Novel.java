@@ -2,21 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.tuibes;
+package com.mycompany.book;
 
 /**
  *
  * @author りおん塩田
  */
-public class Komik extends Book{
+public class Novel extends Book{
     private String genre;
 
-    public Komik(String genre, String judulBuku, String idBuku, String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating) {
-        super(judulBuku, idBuku, namaPenulis, namaPenerbit, harga, tahunTerbit, rating, "Komik");
+    public Novel(String genre, String judulBuku, String idBuku, String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating) {
+        super(judulBuku, idBuku, namaPenulis, namaPenerbit, harga, tahunTerbit, rating, "Novel");
         this.genre = genre;
     }
-
-    
     
     @Override
     public void printInfoBuku(){

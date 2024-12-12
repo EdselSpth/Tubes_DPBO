@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.mycompany.tuibes;
+package com.mycompany.sistem;
 
+import com.mycompany.account.Account;
 import java.util.Scanner;
 
 /**

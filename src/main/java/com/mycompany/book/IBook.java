@@ -1,4 +1,4 @@
-package com.mycompany.tuibes;
+package com.mycompany.book;
 
 public interface IBook {
     String getJudulBuku();

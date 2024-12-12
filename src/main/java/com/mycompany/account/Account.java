@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.tuibes;
+package com.mycompany.account;
 
 import java.util.Scanner;
 
@@ -13,13 +13,7 @@ import java.util.Scanner;
 public class Account {
     Scanner s = new Scanner(System.in);
     Admin A = new Admin();
-    public void LoginMenu(){
-        System.out.println("===========================================================");
-        System.out.println("\t Pilih Menu Pengguna");
-        System.out.println("\t 1. Admin");
-        System.out.println("\t 2. Pengguna");
-        System.out.println("===========================================================");
-    }
+    
     
     public void Login(){
         String username;
