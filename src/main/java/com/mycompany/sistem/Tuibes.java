@@ -4,8 +4,6 @@
 
 package com.mycompany.sistem;
 
-import com.mycompany.account.Account;
-import java.util.Scanner;
 
 /**
  *
@@ -14,7 +12,6 @@ import java.util.Scanner;
 public class Tuibes {
 
     public static void main(String[] args) {
-        Account a = new Account();
-        a.Login();
+        
     }
 }
