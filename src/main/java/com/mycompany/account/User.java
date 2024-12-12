@@ -4,10 +4,26 @@
  */
 package com.mycompany.account;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author りおん塩田
  */
-public class User {
+public class User implements IAccount {
+    private ArrayList<Account> userList;
+    
+    public User(){
+        userList = new ArrayList<>();
+        userList.add(new Account("User123", "User123"));
+        userList.add(new Account("Rinitial", "RintialPassword"));
+        userList.add(new Account("ZetaZeta", "VestiaZeta"));
+    }
+
+    @Override
+    public void login() {
+        
+    }
+    
     
 }

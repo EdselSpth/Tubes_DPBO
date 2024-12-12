@@ -9,10 +9,20 @@ import java.util.ArrayList;
  *
  * @author りおん塩田
  */
-public class Admin  {
-    ArrayList<Account> accountList = new ArrayList<>();
+public class Admin implements IAccount {
+    private ArrayList<Account> adminList;
     
-    accountList.add(new Account("Admin", "Admin123"));
+    public Admin(){
+        adminList = new ArrayList<>();
+        adminList.add(new Account("Admin123", "Admin"));
+        adminList.add(new Account("EdselSpth", "Edsel@S3pta"));
+        adminList.add(new Account("Kobo1212", "Kobo123"));
+    }
+
+    @Override
+    public void login() {
+        
+    }
     
     
 }
