@@ -37,6 +37,7 @@ public class Menu {
         System.out.println("1. Tampilkan E-Book");
         System.out.println("2. Cari E-Book");
         System.out.println("3. Perpustakaan");
+        System.out.println("4. Tampilkan E-Book berdasarkan kategori");
     }
     
     public void menuBacaBuku(){
