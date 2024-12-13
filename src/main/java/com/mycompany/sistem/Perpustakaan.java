@@ -15,19 +15,21 @@ import java.util.ArrayList;
 public class Perpustakaan {
     private ArrayList<Book> listBuku;
     Menu menu = new Menu();
-     
+    BookManagement BM = new BookManagement();
     
     public Perpustakaan() {
-        this.listBuku = new ArrayList
+        
     }
     
     public void showBuku(){
-        if (listBuku.isEmpty()) {
+        if (BM.books.isEmpty()) {
             System.out.println("Tidak Ada Buku di perpustakaan");
         }else {
-            for (Book buku : listBuku) {
-                menu.FormatBukuPrint();
-                buku.toString();
+            menu.FormatBukuPrint();
+            for (int i = 0; i < BM.books.size(); i++) {
+                
+                
+                
                 System.out.println("-----------------------");
             }
         }

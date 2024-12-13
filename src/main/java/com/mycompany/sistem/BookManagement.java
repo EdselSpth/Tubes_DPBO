@@ -17,14 +17,14 @@ import java.util.ArrayList;
  * @author りおん塩田
  */
 public class BookManagement {
-    public ArrayList<Book> books;
+    protected ArrayList<Book> books;
     
     public BookManagement(){
         books = new ArrayList<>();
-        books.add(new Novel("001" , "Bungo Stray Dogs", "Fantasy", "Kafka Asagiri", "Kadokawa", 45000, 2020, 10));
-        books.add(new Pendidikan());
-        books.add(new Sejarah());
-        books.add(new Komik());
-        books.add(new Majalah());
+        books.add(new Novel("Nov001" , "Bungo Stray Dogs", "Fantasy", "Kafka Asagiri", "Kadokawa", 45000, 2020, 10.0));
+        books.add(new Pendidikan("Pen001", "Matematika : Aljabar", "Matematika", "Alisha Ravencroft", "MathGroup", 40000, 2015, 7.5));
+        books.add(new Sejarah("Sej001", "World History", "Past-Present", "Dunia", "Adolf Hitler", "German Corpse", 80000, 1955, 10.0));
+        books.add(new Komik("KMK001", "Doraemon", "Fantasy", "Fujiko F. Fujio", "JapanComics", 20000, 2005, 8.0));
+        books.add(new Majalah("MJL001", "Chips", "Teknologi", "Dedy Irvan", "Chips Company", 120000, 2007, 9.5));
     }
 }
