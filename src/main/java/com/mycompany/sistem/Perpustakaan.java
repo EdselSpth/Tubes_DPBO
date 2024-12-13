@@ -14,10 +14,11 @@ import java.util.ArrayList;
 
 public class Perpustakaan {
     private ArrayList<Book> listBuku;
-    
+    Menu menu = new Menu();
+     
     
     public Perpustakaan() {
-        this.listBuku = new ArrayList<>();
+        this.listBuku = new ArrayList
     }
     
     public void showBuku(){
@@ -25,7 +26,8 @@ public class Perpustakaan {
             System.out.println("Tidak Ada Buku di perpustakaan");
         }else {
             for (Book buku : listBuku) {
-                buku.printInfoBuku();
+                menu.FormatBukuPrint();
+                buku.toString();
                 System.out.println("-----------------------");
             }
         }

@@ -5,7 +5,6 @@
 package com.mycompany.sistem;
 
 import com.mycompany.book.Book;
-import com.mycompany.book.Koran;
 import java.util.ArrayList;
 
 /**
@@ -17,6 +16,7 @@ public class BookManagement {
     
     public BookManagement(){
         books = new ArrayList<>();
-        books.add(new Koran("13-09-04", "Harian Kompas", "KOR001", "N/A", "Kompas Media", 3000, 2004, 5));
+        books.add(new ));
+        b
     }
 }
