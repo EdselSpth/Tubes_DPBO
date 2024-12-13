@@ -11,7 +11,7 @@ package com.mycompany.book;
 public class Novel extends Book{
     private String genre;
 
-    public Novel(String genre, String judulBuku, String idBuku, String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating) {
+    public Novel(String idBuku, String judulBuku, String genre, String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating) {
         super(judulBuku, idBuku, namaPenulis, namaPenerbit, harga, tahunTerbit, rating, "Novel");
         this.genre = genre;
     }

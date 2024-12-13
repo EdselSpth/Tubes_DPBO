@@ -12,7 +12,7 @@ public class Pendidikan extends Book{
     private String namaBidang;
     private double discountRate = 0.5;
 
-    public Pendidikan(String namaBidang, String judulBuku, String idBuku, String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating) {
+    public Pendidikan(String idBuku,  String judulBuku, String namaBidang, String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating) {
         super(judulBuku, idBuku, namaPenulis, namaPenerbit, harga, tahunTerbit, rating, "Pendidikan");
         this.namaBidang = namaBidang;
     }

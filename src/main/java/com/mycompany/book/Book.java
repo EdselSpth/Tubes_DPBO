@@ -19,7 +19,7 @@ public class Book implements IBook{
     protected String kategori;
     protected boolean license = false;
 
-    public Book(String judulBuku, String idBuku, String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating, String kategori) {
+    public Book(String idBuku, String judulBuku, String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating, String kategori) {
         this.judulBuku = judulBuku;
         this.idBuku = idBuku;
         this.namaPenulis = namaPenulis;

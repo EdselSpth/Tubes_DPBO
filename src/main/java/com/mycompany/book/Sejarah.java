@@ -13,7 +13,7 @@ public class Sejarah extends Book {
     private String lokasiSejarah;
     private double discountRate = 0.2;
 
-    public Sejarah(String periodeSejarah, String lokasiSejarah, String judulBuku, String idBuku, String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating) {
+    public Sejarah(String idBuku, String judulBuku, String periodeSejarah, String lokasiSejarah, String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating) {
         super(judulBuku, idBuku, namaPenulis, namaPenerbit, harga, tahunTerbit, rating, "Sejarah");
         this.periodeSejarah = periodeSejarah;
         this.lokasiSejarah = lokasiSejarah;
