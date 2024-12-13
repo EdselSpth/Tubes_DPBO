@@ -5,13 +5,17 @@
 package com.mycompany.account;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import com.mycompany.sistem.Menu;
 /**
  *
  * @author りおん塩田
  */
 public class Admin implements IAccount {
+    Menu menu = new Menu();
     private ArrayList<Account> adminList;
     Scanner S = new Scanner(System.in);
+    boolean passwordValidation = false;
     
     public Admin(){
         adminList = new ArrayList<>();
@@ -22,7 +26,6 @@ public class Admin implements IAccount {
 
     @Override
     public void loginValidation() {
-        boolean passwordValidation = false;
         System.out.print("> Username : ");
         String username = S.nextLine();
         System.out.print("> Password : ");
@@ -34,15 +37,30 @@ public class Admin implements IAccount {
         }
     }
     
+    @Override
     public void menuInside(){
+        try {
+            if (passwordValidation){
+                menu.menuAdmin();
+                System.out.print("Pilih Menu : ");
+                int pilihan = S.nextInt();
+                switch(pilihan){
+                    case 1:
+                        
+                    case 2:
+                    
+                    case 3:
+                    
+                    default:
+                }
+            } else {
+                throw new Exception("Username atau Password Salah");
+            }
+            
+        } catch (Exception ex) {
+            ex.getMessage();
+        }
         
     }
 
-    @Override
-    public void insideMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
-    
 }
-

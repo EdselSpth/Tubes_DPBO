@@ -10,5 +10,5 @@ package com.mycompany.account;
  */
 public interface IAccount {
     public void loginValidation();
-    public void insideMenu();
+    public void menuInside();
 }
