@@ -4,6 +4,9 @@
  */
 package com.mycompany.sistem;
 
+import com.mycompany.book.Book;
+import java.util.ArrayList;
+
 /**
  *
  * @author りおん塩田
@@ -11,18 +14,47 @@ package com.mycompany.sistem;
 public class Pembelian {
     protected String idPembelian;
     protected String tanggalPembelian;
+    private ArrayList<String> riwayatPembelian;
 
-   
+    public Pembelian() {
+        this.riwayatPembelian = new ArrayList<>();
+    }
+    
     public void showStruk() {
         System.out.println("ID Pembelian: " + idPembelian);
         System.out.println("Tanggal Pembelian: " + tanggalPembelian);
     }
-
-    public void setIdPembelian(String idPembelian) {
+    
+    public void beliBuku(Perpustakaan perpustakaan, Book bukuDibeli, String idPembelian, String tanggalPembelian) {
         this.idPembelian = idPembelian;
-    }
+        this.tanggalPembelian = tanggalPembelian;
 
-    public int totalHarga() {
-        return 0; 
+        
+        if (!bukuDibeli.getLicense()) { 
+            bukuDibeli.setLicense(); 
+            perpustakaan.tambahBuku(bukuDibeli);
+            System.out.println("Buku \"" + bukuDibeli.getJudulBuku() + "\" berhasil dibeli dan ditambahkan ke perpustakaan.");
+        } else {
+            System.out.println("Buku \"" + bukuDibeli.getJudulBuku() + "\" sudah berlisensi dan ada di perpustakaan.");
+        }
+
+        
+        riwayatPembelian.add("ID: " + idPembelian + ", Tanggal: " + tanggalPembelian + ", Buku: " + bukuDibeli.getJudulBuku());
+
+        
+        System.out.println("\n=== Struk Pembelian ===");
+        System.out.println("ID Pembelian: " + idPembelian);
+        System.out.println("Tanggal Pembelian: " + tanggalPembelian);
+
+        
+        System.out.println("\n=== Buku di Perpustakaan ===");
+        perpustakaan.showBuku();
+    }
+    
+    public void showRiwayatPembelian() {
+        System.out.println("\n=== Riwayat Pembelian ===");
+        for (String transaksi : riwayatPembelian) {
+            System.out.println(transaksi);
+        }
     }
 }

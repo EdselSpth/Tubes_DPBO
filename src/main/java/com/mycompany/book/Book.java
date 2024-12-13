@@ -39,6 +39,10 @@ public class Book implements IBook{
         this.license = true;
     }
     
+    public boolean getLicense() {
+        return license;
+    }
+    
     public String getIdBuku() {
         return idBuku;
     }

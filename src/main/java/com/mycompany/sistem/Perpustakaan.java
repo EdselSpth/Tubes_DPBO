@@ -33,7 +33,6 @@ public class Perpustakaan {
     
     public void tambahBuku(Book bukuBaru){
         listBuku.add(bukuBaru);
-        System.out.println("Buku \"" + bukuBaru.getJudulBuku() + "\" berhasil ditambahkan.");
     }
     
     public void refundBuku(String idBuku){
@@ -50,4 +49,5 @@ public class Perpustakaan {
             System.out.println("Buku dengan ID \"" + idBuku + "\" tidak ditemukan.");
         }
     }
+    
 }
