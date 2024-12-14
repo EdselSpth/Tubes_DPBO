@@ -4,6 +4,7 @@
  */
 package com.mycompany.account;
 
+import com.mycompany.sistem.BookManagement;
 import java.util.ArrayList;
 import java.util.Scanner;
 import com.mycompany.sistem.Menu;
@@ -19,6 +20,7 @@ public class Admin implements IAccount {
     private HashMap<String, Account> admin = new HashMap<>();
     Scanner S = new Scanner(System.in);
     boolean passwordValidation = false;
+    BookManagement BM = new BookManagement();
 
     public Admin() {
         admin.put("admin", new Account("Admin", "admin123"));
@@ -50,11 +52,11 @@ public class Admin implements IAccount {
                     pilihan = S.nextInt();
                     switch (pilihan) {
                         case 1:
-
+                            BM.tambahDataBuku();
                         case 2:
-
+                            BM.hapusDataBuku();
                         case 3:
-
+                            
                         default:
                     }
                 }
