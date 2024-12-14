@@ -31,7 +31,7 @@ public class Pembelian {
         this.tanggalPembelian = tanggalPembelian;
 
         
-        if (!bukuDibeli.getLicense()) { 
+        if (!bukuDibeli.isLicense()) { 
             for (int i = 0; i < BM.books.size(); i++) {
                 if (BM.books.get(i).getJudulBuku().equals(bukuDibeli.getJudulBuku())){
                     BM.books.get(i).setLicense(true);
