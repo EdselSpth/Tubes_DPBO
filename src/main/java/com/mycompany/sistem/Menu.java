@@ -28,16 +28,21 @@ public class Menu {
         headerFooter();
         System.out.println("1. Tambah Data Buku"); 
         System.out.println("2. Hapus Data Buku");
-        System.out.println("3. Cek Riwayat Transaksi");
-        System.out.println("4. Edit Data Buku");
+        System.out.println("3. Edit Data Buku");
+        System.out.println("4. Keluar");
     }
     
     public void menuUser(){
         headerFooter();
         System.out.println("1. Tampilkan E-Book");
         System.out.println("2. Cari E-Book");
-        System.out.println("3. Perpustakaan");
         System.out.println("4. Tampilkan E-Book berdasarkan kategori");
+        System.out.println("3. Perpustakaan Pengguna");
+    }
+    
+    public void menuPilihBuku(){
+        System.out.println("1. Baca Buku");
+        System.out.println("2. Refund Buku");
     }
     
     public void menuBacaBuku(){
@@ -55,6 +60,5 @@ public class Menu {
         System.out.println("3. Sejarah");
         System.out.println("4. Komik");
         System.out.println("5. Majalah");
-        System.out.println("6. Koran");
     }
 }

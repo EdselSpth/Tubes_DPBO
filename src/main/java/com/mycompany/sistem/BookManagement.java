@@ -11,20 +11,49 @@ import com.mycompany.book.Novel;
 import com.mycompany.book.Pendidikan;
 import com.mycompany.book.Sejarah;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
  * @author りおん塩田
  */
 public class BookManagement {
-    protected ArrayList<Book> books;
+    protected ArrayList<Book> books = new ArrayList<>();;
+    Scanner S = new Scanner(System.in);
+    Menu menu = new Menu();
     
     public BookManagement(){
-        books = new ArrayList<>();
         books.add(new Novel("Nov001" , "Bungo Stray Dogs", "Fantasy", "Kafka Asagiri", "Kadokawa", 45000, 2020, 10.0));
         books.add(new Pendidikan("Pen001", "Matematika : Aljabar", "Matematika", "Alisha Ravencroft", "MathGroup", 40000, 2015, 7.5));
         books.add(new Sejarah("Sej001", "World History", "Past-Present", "Dunia", "Adolf Hitler", "German Corpse", 80000, 1955, 10.0));
         books.add(new Komik("KMK001", "Doraemon", "Fantasy", "Fujiko F. Fujio", "JapanComics", 20000, 2005, 8.0));
         books.add(new Majalah("MJL001", "Chips", "Teknologi", "Dedy Irvan", "Chips Company", 120000, 2007, 9.5));
+    }
+    
+    public void tambahDataBuku(){
+        System.out.println("Pilih kategori buku");
+        menu.menuKategoriBuku();
+        int pilihan = S.nextInt();
+        switch(pilihan){
+            case 1 :
+                System.out.println("Tambah Buku Pendidikan");
+                System.out.print("ID Buku : ");
+                String IDBuku = S.nextLine();
+                System.out.print("Judul Buku : ");
+                String judul = S.nextLine();
+                System.out.print("Nama Bidang : ");
+                String bidang = S.nextLine();
+                System.out.print("Nama Penulis : ");
+                String penulis = S.nextLine();
+                System.out.print("Nama Penerbit : ");
+                String penerbit = S.nextLine();
+                System.out.print("Harga : ");
+                int harga = S.nextInt();
+                System.out.println("Tahun Terbit : ");
+                int tahunTerbit = S.nextInt();
+                System.out.println("Rating : ");
+                double rating = S.nextDouble();
+                books.add(new Pendidikan(IDBuku, judul, bidang, penulis, penerbit, harga, tahunTerbit, rating));
+        }
     }
 }

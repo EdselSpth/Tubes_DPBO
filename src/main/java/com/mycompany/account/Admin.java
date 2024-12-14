@@ -39,20 +39,24 @@ public class Admin implements IAccount {
     
     @Override
     public void menuInside(){
+        int pilihan = 999;
         try {
             if (passwordValidation){
-                menu.menuAdmin();
-                System.out.print("Pilih Menu : ");
-                int pilihan = S.nextInt();
-                switch(pilihan){
-                    case 1:
-                        
-                    case 2:
+                while (pilihan != 0){
+                    menu.menuAdmin();
+                    System.out.print("Pilih Menu : ");
+                    pilihan = S.nextInt();
+                    switch(pilihan){
+                        case 1:
+                            
+                        case 2:
                     
-                    case 3:
+                        case 3:
                     
-                    default:
+                        default:
                 }
+                }
+                
             } else {
                 throw new Exception("Username atau Password Salah");
             }
