@@ -10,12 +10,14 @@ package com.mycompany.sistem;
  */
 public class Menu {
     public void LoginMenu(){
+        headerFooter();
         System.out.println("Pilih Menu Pengguna");
         System.out.println("1. Admin");
         System.out.println("2. Pengguna");
     }
     
     public void AplicationName(){
+        headerFooter();
         System.out.println("BukaBuku");
         System.out.println("E-Book Platform");
     }
@@ -26,6 +28,7 @@ public class Menu {
     
     public void menuAdmin(){
         headerFooter();
+        System.out.println("Menu Admin");
         System.out.println("1. Tambah Data Buku"); 
         System.out.println("2. Hapus Data Buku");
         System.out.println("3. Edit Data Buku");
@@ -34,6 +37,7 @@ public class Menu {
     
     public void menuUser(){
         headerFooter();
+        System.out.println("Menu User");
         System.out.println("1. Tampilkan E-Book");
         System.out.println("2. Cari E-Book");
         System.out.println("4. Tampilkan E-Book berdasarkan kategori");
@@ -41,11 +45,13 @@ public class Menu {
     }
     
     public void menuPilihBuku(){
+        System.out.println("Pilih Opsi");
         System.out.println("1. Baca Buku");
         System.out.println("2. Refund Buku");
     }
     
     public void menuBacaBuku(){
+        System.out.println("Pilih Opsi");
         System.out.println("1. Komentar");
         System.out.println("2. Kembali ke menu");
     }

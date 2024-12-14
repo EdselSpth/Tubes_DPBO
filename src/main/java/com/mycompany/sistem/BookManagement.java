@@ -158,24 +158,5 @@ public class BookManagement {
         }
     }
     
-    public void editDataBuku(){
-        int indexBuku;
-        System.out.println("Edit Data Buku");
-        System.out.print("ID Buku : ");
-        String IDBukuEdit = S.nextLine();
-        for (int i = 0; i < books.size(); i++){
-            if (books.get(i).getIdBuku().equalsIgnoreCase(IDBukuEdit)){
-                indexBuku = i;
-            }
-        }
-        System.out.println("Pilih data yang mau diedit : ");
-        menu.pilihanEditBuku();
-        System.out.print("Pilih : ");
-        int Pilihan = S.nextInt();
-        switch(pilihan){
-            case 1:
-                books.get(indexBuku).set
-        }
-        
-    }
+    
 }

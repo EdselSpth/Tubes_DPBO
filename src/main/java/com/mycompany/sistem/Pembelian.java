@@ -34,7 +34,7 @@ public class Pembelian {
         if (!bukuDibeli.getLicense()) { 
             for (int i = 0; i < BM.books.size(); i++) {
                 if (BM.books.get(i).getJudulBuku().equals(bukuDibeli.getJudulBuku())){
-                    BM.books.get(i).setLicense();
+                    BM.books.get(i).setLicense(true);
                     System.out.println("Buku \"" + bukuDibeli.getJudulBuku() + "\" berhasil dibeli dan ditambahkan ke perpustakaan.");
                 }
             } 
