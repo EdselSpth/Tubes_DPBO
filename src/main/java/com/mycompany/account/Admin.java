@@ -28,21 +28,14 @@ public class Admin implements IAccount {
 
     @Override
     public void loginValidation() {
-        try {
-            System.out.print("> Username : ");
-            String username = S.nextLine();
-            System.out.print("> Password : ");
-            String password = S.nextLine();
+        System.out.print("> Username : ");
+        String username = S.nextLine();
+        System.out.print("> Password : ");
+        String password = S.nextLine();
 
-            Account account = admin.get(username);
-            if (account == null || !account.getPassword().equals(password)) {
-                throw new Exception("Username atau Password Salah");
-            }
+        Account account = admin.get(username);
+        if (account != null && account.getPassword().equals(password)) {
             passwordValidation = true;
-            System.out.println("Login berhasil!");
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
         }
     }
 
