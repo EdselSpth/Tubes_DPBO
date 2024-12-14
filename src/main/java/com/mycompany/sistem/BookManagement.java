@@ -158,5 +158,20 @@ public class BookManagement {
         }
     }
     
+    public void editDataBuku(){
+        int pilihan;
+        boolean ketemu = false;
+        System.out.println("Edit Data Buku");
+        System.out.print("ID Buku : ");
+        String idBukuEdit = S.nextLine();
+        for(int i = 0;  i < books.size(); i++){
+            if (books.get(i).getKategori().equalsIgnoreCase("Pendidikan")){
+                menu.pilihanEditBukuPendidikan();
+                System.out.print("Pilihan : ");
+                
+            }
+        }
+    }
+    
     
 }

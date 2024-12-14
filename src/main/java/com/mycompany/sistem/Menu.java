@@ -54,8 +54,7 @@ public class Menu {
     
     public void menuBacaBuku(){
         System.out.println("Pilih Opsi");
-        System.out.println("1. Komentar");
-        System.out.println("2. Kembali ke menu");
+        System.out.println("1. Kembali ke menu");
     }
     
     public void FormatBukuPrint(){
@@ -70,11 +69,13 @@ public class Menu {
         System.out.println("5. Majalah");
     }
     
-    public void pilihanEditBuku(){
+    public void pilihanEditBukuPendidikan(){
+        System.out.println("Pilih Opsi Edit");
         System.out.println("1. Judul");
         System.out.println("2. Penulis");
         System.out.println("3. Penerbit");
         System.out.println("4. Kategori");
+        System.out.println("5. Bidang");
         System.out.println("5. Harga");
         System.out.println("6. Tahun Terbit");
         System.out.println("7. Rating");
