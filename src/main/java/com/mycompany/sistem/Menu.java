@@ -56,8 +56,8 @@ public class Menu {
     
     public void menuKategoriBuku(){
         System.out.println("1. Pendidikan"); 
-        System.out.println("2. Novel");
         System.out.println("3. Sejarah");
+        System.out.println("2. Novel");
         System.out.println("4. Komik");
         System.out.println("5. Majalah");
     }

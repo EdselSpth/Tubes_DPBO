@@ -21,6 +21,9 @@ public class BookManagement {
     protected ArrayList<Book> books = new ArrayList<>();;
     Scanner S = new Scanner(System.in);
     Menu menu = new Menu();
+    String IDBuku, judul, penulis, penerbit, bidang, periodeSejarah, lokasiSejarah;
+    int harga, tahunTerbit;
+    double rating;
     
     public BookManagement(){
         books.add(new Novel("Nov001" , "Bungo Stray Dogs", "Fantasy", "Kafka Asagiri", "Kadokawa", 45000, 2020, 10.0));
@@ -38,22 +41,63 @@ public class BookManagement {
             case 1 :
                 System.out.println("Tambah Buku Pendidikan");
                 System.out.print("ID Buku : ");
-                String IDBuku = S.nextLine();
+                IDBuku = S.nextLine();
                 System.out.print("Judul Buku : ");
-                String judul = S.nextLine();
+                judul = S.nextLine();
                 System.out.print("Nama Bidang : ");
-                String bidang = S.nextLine();
+                bidang = S.nextLine();
                 System.out.print("Nama Penulis : ");
-                String penulis = S.nextLine();
+                penulis = S.nextLine();
                 System.out.print("Nama Penerbit : ");
-                String penerbit = S.nextLine();
+                penerbit = S.nextLine();
                 System.out.print("Harga : ");
-                int harga = S.nextInt();
-                System.out.println("Tahun Terbit : ");
-                int tahunTerbit = S.nextInt();
-                System.out.println("Rating : ");
-                double rating = S.nextDouble();
+                harga = S.nextInt();
+                System.out.print("Tahun Terbit : ");
+                tahunTerbit = S.nextInt();
+                System.out.print("Rating : ");
+                rating = S.nextDouble();
                 books.add(new Pendidikan(IDBuku, judul, bidang, penulis, penerbit, harga, tahunTerbit, rating));
+            case 2 :
+                System.out.println("Tambah Buku Sejarah");
+                System.out.print("ID Buku : ");
+                IDBuku = S.nextLine();
+                System.out.print("Judul Buku : ");
+                judul = S.nextLine();
+                System.out.print("Periode Sejarah : ");
+                periodeSejarah = S.nextLine();
+                System.out.print("Lokasi Sejarah : ");
+                lokasiSejarah = S.nextLine();
+                System.out.print("Nama Penulis : ");
+                penulis = S.nextLine();
+                System.out.print("Nama Penerbit : ");
+                penerbit = S.nextLine();
+                System.out.print("Harga : ");
+                harga = S.nextInt();
+                System.out.print("Tahun Terbit : ");
+                tahunTerbit = S.nextInt();
+                System.out.print("Rating : ");
+                rating = S.nextDouble();
+                books.add(new Sejarah(IDBuku, judul, periodeSejarah, lokasiSejarah, penulis, penerbit, harga, tahunTerbit, rating));
+            case 3 :
+                System.out.println("Tambah Buku Novel");
+                System.out.print("ID Buku : ");
+                IDBuku = S.nextLine();
+                System.out.print("Judul Buku : ");
+                judul = S.nextLine();
+                System.out.print("Periode Sejarah : ");
+                periodeSejarah = S.nextLine();
+                System.out.print("Lokasi Sejarah : ");
+                lokasiSejarah = S.nextLine();
+                System.out.print("Nama Penulis : ");
+                penulis = S.nextLine();
+                System.out.print("Nama Penerbit : ");
+                penerbit = S.nextLine();
+                System.out.print("Harga : ");
+                harga = S.nextInt();
+                System.out.print("Tahun Terbit : ");
+                tahunTerbit = S.nextInt();
+                System.out.print("Rating : ");
+                rating = S.nextDouble();
         }
     }
 }
