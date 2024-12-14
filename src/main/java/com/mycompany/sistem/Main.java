@@ -3,6 +3,7 @@
  */
 package com.mycompany.sistem;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import com.mycompany.account.*;
 
@@ -21,11 +22,10 @@ public class Main {
         menu.AplicationName();
         menu.LoginMenu();
 
-        System.out.print("Pilih opsi: ");
-        int opsi = s.nextInt();
-        s.nextLine();
-
         try {
+            System.out.print("Pilih opsi: ");
+            int opsi = s.nextInt();
+            s.nextLine();
             switch (opsi) {
                 case 1:
                     admin.loginValidation();
@@ -42,6 +42,9 @@ public class Main {
                 default:
                     System.out.println("Opsi tidak valid!");
             }
+        } catch (InputMismatchException e) {
+            System.out.println("Error: Harap masukkan angka yang valid!");
+            s.nextLine();
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
