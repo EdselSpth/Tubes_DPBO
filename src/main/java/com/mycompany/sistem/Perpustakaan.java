@@ -38,9 +38,9 @@ public class Perpustakaan {
     
     public void refundBuku(String idBuku){
         boolean ditemukan = false;
-        for (Book buku : listBuku) {
-            if (buku.getIdBuku().equals(idBuku)) {
-                listBuku.remove(buku);
+        for (int i = 0; i < BM.books.size(); i++) {
+            if (BM.books.get(i).getIdBuku().equals(idBuku)) {
+                listBuku.remove(BM.books.get(i));
                 System.out.println("Buku dengan ID \"" + idBuku + "\" berhasil dihapus.");
                 ditemukan = true;
                 break;

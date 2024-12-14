@@ -15,6 +15,7 @@ public class Pembelian {
     protected String idPembelian;
     protected String tanggalPembelian;
     private ArrayList<String> riwayatPembelian;
+    BookManagement BM = new BookManagement();
 
     public Pembelian() {
         this.riwayatPembelian = new ArrayList<>();
@@ -31,16 +32,17 @@ public class Pembelian {
 
         
         if (!bukuDibeli.getLicense()) { 
-            bukuDibeli.setLicense(); 
-            perpustakaan.tambahBuku(bukuDibeli);
-            System.out.println("Buku \"" + bukuDibeli.getJudulBuku() + "\" berhasil dibeli dan ditambahkan ke perpustakaan.");
+            for (int i = 0; i < BM.books.size(); i++) {
+                if (BM.books.get(i).getJudulBuku().equals(bukuDibeli.getJudulBuku())){
+                    BM.books.get(i).setLicense();
+                    System.out.println("Buku \"" + bukuDibeli.getJudulBuku() + "\" berhasil dibeli dan ditambahkan ke perpustakaan.");
+                }
+            } 
         } else {
             System.out.println("Buku \"" + bukuDibeli.getJudulBuku() + "\" sudah berlisensi dan ada di perpustakaan.");
         }
-
         
         riwayatPembelian.add("ID: " + idPembelian + ", Tanggal: " + tanggalPembelian + ", Buku: " + bukuDibeli.getJudulBuku());
-
         
         System.out.println("\n=== Struk Pembelian ===");
         System.out.println("ID Pembelian: " + idPembelian);
