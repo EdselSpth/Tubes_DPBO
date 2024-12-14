@@ -8,10 +8,10 @@ package com.mycompany.book;
  *
  * @author りおん塩田
  */
-public class Sejarah extends Book {
+public class Sejarah extends Book implements IBook {
     private String periodeSejarah;
     private String lokasiSejarah;
-    private double discountRate = 0.2;
+    private double discountRate = 0.02;
 
     public Sejarah(String idBuku, String judulBuku, String periodeSejarah, String lokasiSejarah, String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating) {
         super(judulBuku, idBuku, namaPenulis, namaPenerbit, harga, tahunTerbit, rating, "Sejarah");
@@ -21,8 +21,9 @@ public class Sejarah extends Book {
 
     
     
-    public double hargaDiskon(){
-        return super.getHarga() * this.discountRate;
+    @Override
+    public double harga(){
+        return super.getHarga() - (this.discountRate * super.getHarga());
     }
     
     @Override
@@ -35,12 +36,9 @@ public class Sejarah extends Book {
         System.out.println("Wilayah Sejarah : " + this.lokasiSejarah);
         System.out.println("Rating : " + super.getRating());
         System.out.println("Tahun Terbit : " + super.getTahunTerbit());
-        System.out.println("Harga : " + super.getHarga());
+        System.out.println("Harga : " + harga());
     }
-    
-    public double dapatHarga(){
-        return hargaDiskon();
-    }
+   
 
     public String getPeriodeSejarah() {
         return periodeSejarah;
@@ -53,7 +51,4 @@ public class Sejarah extends Book {
     public double getDiscountRate() {
         return discountRate;
     }
-    
-    
-    
 }

@@ -8,12 +8,12 @@ package com.mycompany.book;
  *
  * @author りおん塩田
  */
-public class Book implements IBook{
+public class Book {
     private String judulBuku;
     private String idBuku;
     private String namaPenulis;
     private String namaPenerbit;
-    private int harga;
+    private double harga;
     private int tahunTerbit;
     private double rating;
     private String kategori;
@@ -30,45 +30,20 @@ public class Book implements IBook{
         this.kategori = kategori;
     }
 
-    @Override
     public String getJudulBuku() {
         return judulBuku;
     }
 
-    public void setLicense() {
-        this.license = true;
+    public void setJudulBuku(String judulBuku) {
+        this.judulBuku = judulBuku;
     }
-    
-    public boolean getLicense() {
-        return license;
-    }
-    
+
     public String getIdBuku() {
         return idBuku;
     }
 
-    @Override
-    public int getHarga() {
-        return harga;
-    }
-
-    @Override
-    public void printInfoBuku(){
-        System.out.println("Judul: " + judulBuku);
-        System.out.println("Penulis: " + namaPenulis);
-        System.out.println("Harga: Rp " + harga);
-        System.out.println("Tahun Terbit: " + tahunTerbit);
-        System.out.println("Penerbit: " + namaPenerbit);
-        System.out.println("Rating: " + rating);
-    }
-
-    @Override
-    public String getKategori() {
-        return kategori;
-    }
-    
-    public void setValidFalse(){
-        this.license = false;
+    public void setIdBuku(String idBuku) {
+        this.idBuku = idBuku;
     }
 
     public String getNamaPenulis() {
@@ -87,6 +62,14 @@ public class Book implements IBook{
         this.namaPenerbit = namaPenerbit;
     }
 
+    public double getHarga() {
+        return harga;
+    }
+
+    public void setHarga(int harga) {
+        this.harga = harga;
+    }
+
     public int getTahunTerbit() {
         return tahunTerbit;
     }
@@ -103,6 +86,14 @@ public class Book implements IBook{
         this.rating = rating;
     }
 
+    public String getKategori() {
+        return kategori;
+    }
+
+    public void setKategori(String kategori) {
+        this.kategori = kategori;
+    }
+
     public boolean isLicense() {
         return license;
     }
@@ -110,7 +101,7 @@ public class Book implements IBook{
     public void setLicense(boolean license) {
         this.license = license;
     }
-    
+
     
     
     

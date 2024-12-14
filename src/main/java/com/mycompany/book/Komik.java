@@ -8,15 +8,18 @@ package com.mycompany.book;
  *
  * @author りおん塩田
  */
-public class Komik extends Book{
+public class Komik extends Book implements IBook{
     private String genre;
 
     public Komik(String idBuku, String judulBuku, String genre, String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating) {
         super(judulBuku, idBuku, namaPenulis, namaPenerbit, harga, tahunTerbit, rating, "Komik");
         this.genre = genre;
     }
-
     
+    @Override
+    public double harga(){
+        return super.getHarga();
+    }
     
     @Override
     public void printInfoBuku(){
@@ -33,5 +36,8 @@ public class Komik extends Book{
     public String getGenre() {
         return genre;
     }
-    
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
 }

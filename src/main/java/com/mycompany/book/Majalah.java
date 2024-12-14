@@ -8,12 +8,17 @@ package com.mycompany.book;
  *
  * @author りおん塩田
  */
-public class Majalah extends Book {
+public class Majalah extends Book implements IBook{
     private String jenisMajalah;
 
     public Majalah(String idBuku, String judulBuku, String jenisMajalah,  String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating) {
         super(judulBuku, idBuku, namaPenulis, namaPenerbit, harga, tahunTerbit, rating, "Majalah");
         this.jenisMajalah = jenisMajalah;
+    }
+    
+    @Override
+    public double harga(){
+        return super.getHarga();
     }
     
     @Override
@@ -25,12 +30,16 @@ public class Majalah extends Book {
         System.out.println("Jenis Majalah : " + this.jenisMajalah);
         System.out.println("Rating : " + super.getRating());
         System.out.println("Tahun Terbit : " + super.getTahunTerbit());
-        System.out.println("Harga : " + super.getHarga());
+        System.out.println("Harga : " + harga());
     }
 
     public String getJenisMajalah() {
         return jenisMajalah;
     }
-    
+
+    public void setJenisMajalah(String jenisMajalah) {
+        this.jenisMajalah = jenisMajalah;
+    }
+
     
 }
