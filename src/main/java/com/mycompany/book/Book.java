@@ -8,7 +8,7 @@ package com.mycompany.book;
  *
  * @author りおん塩田
  */
-public class Book {
+public class Book implements IBook{
     private String judulBuku;
     private String idBuku;
     private String namaPenulis;
@@ -101,13 +101,19 @@ public class Book {
     public void setLicense(boolean license) {
         this.license = license;
     }
-
-    
-    
     
     @Override
     public String toString() {
         return "   " + judulBuku + "\t\t" + namaPenulis + "\t\t" + namaPenerbit + "\t\t" + kategori + "\t" + harga + "\t" + rating;
+    }
+
+    @Override
+    public void printInfoBuku() {
+    }
+
+    @Override
+    public double harga() {
+        return 0;
     }
     
     

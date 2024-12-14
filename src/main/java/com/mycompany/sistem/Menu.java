@@ -81,5 +81,9 @@ public class Menu {
         System.out.println("7. Rating");
     }
     
+    public void menuBeliBuku(){
+        System.out.println("1. Lihat Informasi Buku");
+        System.out.println("2. Beli Buku");
+    }
     
 }
