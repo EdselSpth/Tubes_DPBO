@@ -159,6 +159,9 @@ public class BookManagement {
     }
     
     public void editDataBuku(){
+        System.out.println("Edit Data Buku");
+        System.out.println("Masukkan IDBuku yang mau di edit : ");
+        String idBukuEdit = S.nextLine();
         
     }
     

@@ -13,7 +13,6 @@ import java.util.ArrayList;
 
 
 public class Perpustakaan {
-    private ArrayList<Book> listBuku;
     Menu menu = new Menu();
     BookManagement BM = new BookManagement();
     
@@ -32,22 +31,6 @@ public class Perpustakaan {
                 }
                 System.out.println("-----------------------");
             }
-        }
-    }
-    
-    
-    public void refundBuku(String idBuku){
-        boolean ditemukan = false;
-        for (int i = 0; i < BM.books.size(); i++) {
-            if (BM.books.get(i).getIdBuku().equals(idBuku)) {
-                listBuku.remove(BM.books.get(i));
-                System.out.println("Buku dengan ID \"" + idBuku + "\" berhasil dihapus.");
-                ditemukan = true;
-                break;
-            }
-        }
-        if (!ditemukan) {
-            System.out.println("Buku dengan ID \"" + idBuku + "\" tidak ditemukan.");
         }
     }
     
