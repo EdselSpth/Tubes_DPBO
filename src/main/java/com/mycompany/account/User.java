@@ -9,6 +9,7 @@ import java.util.Scanner;
 import com.mycompany.sistem.Menu;
 import com.mycompany.sistem.BookManagement;
 import com.mycompany.sistem.Pembelian;
+import com.mycompany.sistem.Perpustakaan;
 /**
  *
  * @author りおん塩田
@@ -20,6 +21,7 @@ public class User implements IAccount {
     boolean passwordValidation = false;
     BookManagement BM = new BookManagement();
     Pembelian P = new Pembelian();
+    Perpustakaan perpus = new Perpustakaan();
     
     public User(){
         userList = new ArrayList<>();
@@ -78,10 +80,11 @@ public class User implements IAccount {
                             }
                         case 2:
                             System.out.print("Masukkan nama buku yang dicari : ");
+                            int indexc2 = 0;
                             String dicari = S.nextLine();
                             for (i = 0; i < BM.books.size(); i++){
                                 if(BM.books.get(i).getJudulBuku().equalsIgnoreCase(dicari)){
-                                    index = i;
+                                    indexc2 = i;
                                 } else{
                                     System.out.println("Buku" + dicari + "tidak tersedia");
                                 }
@@ -89,13 +92,26 @@ public class User implements IAccount {
                             menu.menuPilihBuku();
                             pilihanSistem = S.nextInt();
                             switch(pilihanSistem){
-                                case 1 
+                                case 1:
+                                    if(indexc2 < 0 || indexc2 > BM.books.size()){
+                                        System.out.println("Pilihan buku tidak ada");
+                                    } else {
+                                        BM.books.get(indexc2).printInfoBuku();
+                                    }
+                                case 2:
+                                    P.beliBuku(indexc2);
+                                default:
+                                    System.out.println("Pilihan Tidak ada");
                             }
                         case 3:
-                    
+                            perpus.showBuku();
+                            System.out.print("Pilih Buku : ");
+                            int milihBuku2 = S.nextInt();
+                            menu.menuPilihBuku();
+                            int pilihanc3 = S.nextInt();
                         default:
-                }
-                
+                            System.out.println("Pilihan Menu Tidak Ada");
+                    }
                 }
             } else {
                 throw new Exception("Username atau Password Salah");
