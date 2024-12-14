@@ -7,16 +7,13 @@ package com.mycompany.sistem;
 /**
  *
  * @author りおん塩田
- */w
+ */
 
 
 public class Perpustakaan {
     Menu menu = new Menu();
     BookManagement BM = new BookManagement();
     
-    public Perpustakaan() {
-        
-    }
     
     public void showBuku(){
         if (BM.books.isEmpty()) {

@@ -140,15 +140,15 @@ public class BookManagement {
         }
     }
     
-    public void HapuDataBuku(){
+    public void hapusDataBuku(){
         boolean ketemu = false;
         System.out.println("Hapus Data Buku");
-        System.out.print("Masukkan IDBuku yang mau dihapus : ");
+        System.out.print("ID Buku: ");
         String idBukuHapus = S.nextLine();
         for(int i = 0; i < books.size(); i++){
             if (books.get(i).getIdBuku().equalsIgnoreCase(idBukuHapus)){
                 books.remove(i);
-                ketemu = true;
+                ketemu = true;  
             }
         }
         if (ketemu){
@@ -159,10 +159,23 @@ public class BookManagement {
     }
     
     public void editDataBuku(){
+        int indexBuku;
         System.out.println("Edit Data Buku");
-        System.out.println("Masukkan IDBuku yang mau di edit : ");
-        String idBukuEdit = S.nextLine();
+        System.out.print("ID Buku : ");
+        String IDBukuEdit = S.nextLine();
+        for (int i = 0; i < books.size(); i++){
+            if (books.get(i).getIdBuku().equalsIgnoreCase(IDBukuEdit)){
+                indexBuku = i;
+            }
+        }
+        System.out.println("Pilih data yang mau diedit : ");
+        menu.pilihanEditBuku();
+        System.out.print("Pilih : ");
+        int Pilihan = S.nextInt();
+        switch(pilihan){
+            case 1:
+                books.get(indexBuku).set
+        }
         
     }
-    
 }

@@ -29,7 +29,7 @@ public class Menu {
         System.out.println("1. Tambah Data Buku"); 
         System.out.println("2. Hapus Data Buku");
         System.out.println("3. Edit Data Buku");
-        System.out.println("4. Keluar");
+        System.out.println("3. Keluar");
     }
     
     public void menuUser(){
@@ -61,4 +61,16 @@ public class Menu {
         System.out.println("4. Komik");
         System.out.println("5. Majalah");
     }
+    
+    public void pilihanEditBuku(){
+        System.out.println("1. Judul");
+        System.out.println("2. Penulis");
+        System.out.println("3. Penerbit");
+        System.out.println("4. Kategori");
+        System.out.println("5. Harga");
+        System.out.println("6. Tahun Terbit");
+        System.out.println("7. Rating");
+    }
+    
+    
 }

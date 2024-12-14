@@ -27,15 +27,14 @@ public class Sejarah extends Book {
     
     @Override
     public void printInfoBuku(){
-        System.out.println("ID Buku : " + super.getIdBuku());
         System.out.println("Judul Buku : " + super.getJudulBuku());
-        System.out.println("Nama Penulis : " + super.namaPenulis);
-        System.out.println("Penerbit : " + super.namaPenerbit);
-        System.out.println("Kategori : " + super.kategori);
+        System.out.println("Nama Penulis : " + super.getNamaPenulis());
+        System.out.println("Penerbit : " + super.getNamaPenerbit());
+        System.out.println("Kategori : " + super.getKategori());
         System.out.println("Periode Sejarah : " + this.periodeSejarah);
         System.out.println("Wilayah Sejarah : " + this.lokasiSejarah);
-        System.out.println("Rating : " + super.rating);
-        System.out.println("Tahun Terbit : " + super.tahunTerbit);
+        System.out.println("Rating : " + super.getRating());
+        System.out.println("Tahun Terbit : " + super.getTahunTerbit());
         System.out.println("Harga : " + super.getHarga());
     }
     
