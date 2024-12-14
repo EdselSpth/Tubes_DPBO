@@ -18,12 +18,13 @@ public class Menu {
     
     public void AplicationName(){
         headerFooter();
-        System.out.println("BukaBuku");
-        System.out.println("E-Book Platform");
+        System.out.println("                  BukaBuku");
+        System.out.println("               E-Book Platform");
+        System.out.println("Made by Only Edsel Septa Haryanto [103022300016]");
     }
     
     public void headerFooter(){
-        System.out.println("========================================");
+        System.out.println("===================================================");
     }
     
     public void menuAdmin(){
@@ -48,6 +49,7 @@ public class Menu {
         System.out.println("Pilih Opsi");
         System.out.println("1. Baca Buku");
         System.out.println("2. Refund Buku");
+        System.out.println("3. Kembali ke menu");
     }
     
     public void menuBacaBuku(){
