@@ -18,7 +18,7 @@ import java.util.Scanner;
  * @author りおん塩田
  */
 public class BookManagement {
-    protected ArrayList<Book> books = new ArrayList<>();;
+    public  ArrayList<Book> books = new ArrayList<>();;
     Scanner S = new Scanner(System.in);
     Menu menu = new Menu();
     String IDBuku, judul, penulis, penerbit, bidang, periodeSejarah, lokasiSejarah, genre, jenisMajalah;

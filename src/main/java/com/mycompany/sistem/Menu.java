@@ -20,7 +20,7 @@ public class Menu {
         headerFooter();
         System.out.println("                  BukaBuku");
         System.out.println("               E-Book Platform");
-        System.out.println("Made by Only Edsel Septa Haryanto [103022300016]");
+        System.out.println("Made by Only []");
     }
     
     public void headerFooter(){
@@ -81,6 +81,7 @@ public class Menu {
     }
     
     public void menuBeliBuku(){
+        System.out.println("Mau Lakukan Apa?");
         System.out.println("1. Lihat Informasi Buku");
         System.out.println("2. Beli Buku");
     }
