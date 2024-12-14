@@ -14,6 +14,7 @@ public class Menu {
         System.out.println("Pilih Menu Pengguna");
         System.out.println("1. Admin");
         System.out.println("2. Pengguna");
+        System.out.println("3. Keluar");
     }
     
     public void AplicationName(){
