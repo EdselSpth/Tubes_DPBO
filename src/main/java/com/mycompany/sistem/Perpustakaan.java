@@ -7,9 +7,7 @@ package com.mycompany.sistem;
 /**
  *
  * @author りおん塩田
- */
-import com.mycompany.book.Book;
-import java.util.ArrayList;
+ */w
 
 
 public class Perpustakaan {
