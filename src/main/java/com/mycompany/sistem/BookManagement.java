@@ -135,12 +135,31 @@ public class BookManagement {
                 System.out.print("Rating : ");
                 rating = S.nextDouble();
                 books.add(new Majalah(IDBuku, judul, jenisMajalah, penulis, penerbit, harga, tahunTerbit, rating));
+            default :
+                System.out.println("Masukkan Nomor Menu Yang Benar!!!");
         }
     }
     
     public void HapuDataBuku(){
+        boolean ketemu = false;
         System.out.println("Hapus Data Buku");
         System.out.print("Masukkan IDBuku yang mau dihapus : ");
-        String hapusBuku = S.nextLine();
+        String idBukuHapus = S.nextLine();
+        for(int i = 0; i < books.size(); i++){
+            if (books.get(i).getIdBuku().equalsIgnoreCase(idBukuHapus)){
+                books.remove(i);
+                ketemu = true;
+            }
+        }
+        if (ketemu){
+            System.out.println("Buku berhasil di hapus");
+        } else {
+            System.out.println("Buku tidak ada!!!");
+        }
     }
+    
+    public void editDataBuku(){
+        
+    }
+    
 }

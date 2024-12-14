@@ -35,9 +35,6 @@ public class Perpustakaan {
         }
     }
     
-    public void tambahBuku(Book bukuBaru){
-        listBuku.add(bukuBaru);
-    }
     
     public void refundBuku(String idBuku){
         boolean ditemukan = false;

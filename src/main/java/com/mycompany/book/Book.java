@@ -67,7 +67,11 @@ public class Book implements IBook{
     public String getKategori() {
         return kategori;
     }
-
+    
+    public void setValidFalse(){
+        this.license = false;
+    }
+    
     @Override
     public String toString() {
         return "   " + judulBuku + "\t\t" + namaPenulis + "\t\t" + namaPenerbit + "\t\t" + kategori + "\t" + harga + "\t" + rating;
