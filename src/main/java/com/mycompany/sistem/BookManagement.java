@@ -21,7 +21,7 @@ public class BookManagement {
     protected ArrayList<Book> books = new ArrayList<>();;
     Scanner S = new Scanner(System.in);
     Menu menu = new Menu();
-    String IDBuku, judul, penulis, penerbit, bidang, periodeSejarah, lokasiSejarah, genre;
+    String IDBuku, judul, penulis, penerbit, bidang, periodeSejarah, lokasiSejarah, genre, jenisMajalah;
     int harga, tahunTerbit;
     double rating;
     
@@ -97,6 +97,50 @@ public class BookManagement {
                 System.out.print("Rating : ");
                 rating = S.nextDouble();
                 books.add(new Novel(IDBuku, judul, genre, penulis, penerbit, harga, tahunTerbit, rating));
+            case 4 :
+                System.out.println("Tambah Buku Novel");
+                System.out.print("ID Buku : ");
+                IDBuku = S.nextLine();
+                System.out.print("Judul Buku : ");
+                judul = S.nextLine();
+                System.out.print("Genre : ");
+                genre = S.nextLine();
+                System.out.print("Nama Penulis : ");
+                penulis = S.nextLine();
+                System.out.print("Nama Penerbit : ");
+                penerbit = S.nextLine();
+                System.out.print("Harga : ");
+                harga = S.nextInt();
+                System.out.print("Tahun Terbit : ");
+                tahunTerbit = S.nextInt();
+                System.out.print("Rating : ");
+                rating = S.nextDouble();
+                books.add(new Komik(IDBuku, judul, genre, penulis, penerbit, harga, tahunTerbit, rating));
+            case 5 :
+                System.out.println("Tambah Buku Novel");
+                System.out.print("ID Buku : ");
+                IDBuku = S.nextLine();
+                System.out.print("Judul Buku : ");
+                judul = S.nextLine();
+                System.out.print("Jenis Majalah : ");
+                jenisMajalah = S.nextLine();
+                System.out.print("Nama Penulis : ");
+                penulis = S.nextLine();
+                System.out.print("Nama Penerbit : ");
+                penerbit = S.nextLine();
+                System.out.print("Harga : ");
+                harga = S.nextInt();
+                System.out.print("Tahun Terbit : ");
+                tahunTerbit = S.nextInt();
+                System.out.print("Rating : ");
+                rating = S.nextDouble();
+                books.add(new Majalah(IDBuku, judul, jenisMajalah, penulis, penerbit, harga, tahunTerbit, rating));
         }
+    }
+    
+    public void HapuDataBuku(){
+        System.out.println("Hapus Data Buku");
+        System.out.print("Masukkan IDBuku yang mau dihapus : ");
+        String hapusBuku = S.nextLine();
     }
 }
