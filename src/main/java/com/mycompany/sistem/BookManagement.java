@@ -162,7 +162,7 @@ public class BookManagement {
 
     public void editDataBuku() {
         try {
-            System.out.println("Hapus Data Buku");
+            System.out.println("Edit Data Buku");
             System.out.print("ID Buku: ");
             String idBukuHapus = S.nextLine();
             for (int i = 0; i < books.size(); i++) {
@@ -190,7 +190,7 @@ public class BookManagement {
                     books.get(i).setRating(rating);
                     System.out.println("Edit Data Buku Berhasil");
                 }else{
-                    throw new Exception("Buku tidak ada");
+                    throw new Exception("Buku tidak ada!!!");
                 }
             }
 

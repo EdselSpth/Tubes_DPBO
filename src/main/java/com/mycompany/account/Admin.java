@@ -56,7 +56,7 @@ public class Admin implements IAccount {
                         case 2:
                             BM.hapusDataBuku();
                         case 3:
-                            
+                            BM.editDataBuku();
                         default:
                     }
                 }
