@@ -21,7 +21,7 @@ public class BookManagement {
     protected ArrayList<Book> books = new ArrayList<>();;
     Scanner S = new Scanner(System.in);
     Menu menu = new Menu();
-    String IDBuku, judul, penulis, penerbit, bidang, periodeSejarah, lokasiSejarah;
+    String IDBuku, judul, penulis, penerbit, bidang, periodeSejarah, lokasiSejarah, genre;
     int harga, tahunTerbit;
     double rating;
     
@@ -84,10 +84,8 @@ public class BookManagement {
                 IDBuku = S.nextLine();
                 System.out.print("Judul Buku : ");
                 judul = S.nextLine();
-                System.out.print("Periode Sejarah : ");
-                periodeSejarah = S.nextLine();
-                System.out.print("Lokasi Sejarah : ");
-                lokasiSejarah = S.nextLine();
+                System.out.print("Genre : ");
+                genre = S.nextLine();
                 System.out.print("Nama Penulis : ");
                 penulis = S.nextLine();
                 System.out.print("Nama Penerbit : ");
@@ -98,6 +96,7 @@ public class BookManagement {
                 tahunTerbit = S.nextInt();
                 System.out.print("Rating : ");
                 rating = S.nextDouble();
+                books.add(new Novel(IDBuku, judul, genre, penulis, penerbit, harga, tahunTerbit, rating));
         }
     }
 }
