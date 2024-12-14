@@ -27,9 +27,9 @@ public class Perpustakaan {
         }else {
             menu.FormatBukuPrint();
             for (int i = 0; i < BM.books.size(); i++) {
-                
-                
-                
+                if (BM.books.get(i).getLicense()){
+                     System.out.println(BM.books.get(i).toString());
+                }
                 System.out.println("-----------------------");
             }
         }
