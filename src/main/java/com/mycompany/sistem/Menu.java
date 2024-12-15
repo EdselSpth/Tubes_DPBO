@@ -34,7 +34,7 @@ public class Menu {
         System.out.println("1. Tambah Data Buku"); 
         System.out.println("2. Hapus Data Buku");
         System.out.println("3. Edit Data Buku");
-        System.out.println("3. Keluar");
+        System.out.println("4. Keluar");
     }
     
     public void menuUser(){
@@ -47,9 +47,11 @@ public class Menu {
     }
     
     public void menuPilihBuku(){
+        headerFooter();
         System.out.println("Pilih Opsi");
         System.out.println("1. Baca Buku");
-        System.out.println("2. Kembali ke menu");
+        System.out.println("2. Refund Buku");
+        System.out.println("3. Kembali ke menu");
     }
     
     public void menuBacaBuku(){
@@ -62,6 +64,7 @@ public class Menu {
     }
     
     public void menuKategoriBuku(){
+        headerFooter();
         System.out.println("1. Pendidikan"); 
         System.out.println("3. Sejarah");
         System.out.println("2. Novel");
@@ -85,6 +88,7 @@ public class Menu {
         System.out.println("Mau Lakukan Apa?");
         System.out.println("1. Lihat Informasi Buku");
         System.out.println("2. Beli Buku");
+        System.out.println("3. Kembali ke menu");
     }
     
 }

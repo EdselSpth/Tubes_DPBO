@@ -10,6 +10,13 @@ import com.mycompany.sistem.Menu;
 import com.mycompany.sistem.BookManagement;
 import com.mycompany.sistem.Pembelian;
 import com.mycompany.sistem.Perpustakaan;
+import com.mycompany.sistem.ReadBook;
+import com.mycompany.book.Book;
+import com.mycompany.book.Komik;
+import com.mycompany.book.Majalah;
+import com.mycompany.book.Novel;
+import com.mycompany.book.Pendidikan;
+import com.mycompany.book.Sejarah;
 /**
  *
  * @author りおん塩田
@@ -22,6 +29,7 @@ public class User implements IAccount {
     BookManagement BM = new BookManagement();
     Pembelian P = new Pembelian();
     Perpustakaan perpus = new Perpustakaan();
+    ReadBook RB = new ReadBook();
     
     public User(){
         userList = new ArrayList<>();
@@ -73,6 +81,8 @@ public class User implements IAccount {
                                     }
                                 case 2:
                                     P.beliBuku(index);
+                                case 3:
+                                    return;
                                 default:
                                     System.out.println("Pilihan Menu Tidak terssedia");
                             }
@@ -98,15 +108,80 @@ public class User implements IAccount {
                                     }
                                 case 2:
                                     P.beliBuku(indexc2);
+                                case 3:
+                                    return;
                                 default:
                                     System.out.println("Pilihan Tidak ada");
                             }
                         case 3:
+                            System.out.println("Pilih Kategori yang mau ditampilkan");
+                            menu.menuKategoriBuku();
+                            int pilihanc3 = S.nextInt();
+                            menu.FormatBukuPrint();
+                            switch (pilihanc3){
+                                case 1:
+                                    System.out.println("Daftar Buku Pendidikan");
+                                    for(Book book : BM.books){
+                                        if (book instanceof Pendidikan){
+                                            System.out.println(book.toString());
+                                        }
+                                    }
+                                case 2 :
+                                    System.out.println("Daftar Buku Sejarah");
+                                    for(Book book : BM.books){
+                                        if (book instanceof Sejarah){
+                                            System.out.println(book.toString());
+                                        }
+                                    }
+                                case 3:
+                                    System.out.println("Daftar Buku Novel");
+                                    for(Book book : BM.books){
+                                        if (book instanceof Novel){
+                                            System.out.println(book.toString());
+                                        }
+                                    }
+                                case 4:
+                                    System.out.println("Daftar Buku Komik");
+                                    for(Book book : BM.books){
+                                        if (book instanceof Komik){
+                                            System.out.println(book.toString());
+                                        }
+                                    }
+                                case 5:
+                                    System.out.println("Daftar Buku Majalah");
+                                    for(Book book : BM.books){
+                                        if (book instanceof Majalah){
+                                            System.out.println(book.toString());
+                                        }
+                                    }
+                                default:
+                                    System.out.println("Pilihan tidak tersedia");
+                            }
+                                 
+                        case 4:
                             perpus.printBuku();
                             System.out.print("Pilih Buku : ");
                             int milihBuku2 = S.nextInt();
                             menu.menuPilihBuku();
-                            int pilihanc3 = S.nextInt();
+                            int pilihanc4 = S.nextInt();
+                            switch (pilihanc4){
+                                case 1:
+                                    RB.bacaBuku();
+                                    menu.menuBacaBuku();
+                                    int pilihanc41 = S.nextInt();
+                                    if (pilihanc41 == 1){
+                                        return;
+                                    } else {
+                                        System.out.println("Pilihan tidak tersedia");
+                                    }
+                                case 2:
+                                    P.refundBuku(milihBuku2 - 1); 
+                                case 3:
+                                    return;
+                                default :
+                                    System.out.println("Pilihan tidak tersedia");
+                            }
+                            
                         default:
                             System.out.println("Pilihan Menu Tidak Ada");
                     }

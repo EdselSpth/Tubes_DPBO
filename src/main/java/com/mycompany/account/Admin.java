@@ -52,14 +52,15 @@ public class Admin implements IAccount {
                     pilihan = S.nextInt();
                     switch (pilihan) {
                         case 1:
-                            BM.printBuku();
+                            System.out.println("Menu Tambah Buku");
                             BM.tambahDataBuku();
                             break;
                         case 2:
-                            BM.printBuku();
+                            System.out.println("Menu Hapus Buku");
                             BM.hapusDataBuku();
                             break;
                         case 3:
+                            System.out.println("Menu Edit Buku");
                             BM.editDataBuku();
                             break;
                         case 4:
