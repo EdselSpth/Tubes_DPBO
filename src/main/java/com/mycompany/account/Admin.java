@@ -24,7 +24,7 @@ public class Admin implements IAccount {
 
     public Admin() {
         admin.put("admin", new Account("Admin", "admin123"));
-        admin.put("edsel", new Account("EdselSpth", "Edsel@S3pta"));
+        admin.put("edsel", new Account("////", "////"));
         admin.put("kobo", new Account("Kobo1212", "Kobo123"));
     }
 

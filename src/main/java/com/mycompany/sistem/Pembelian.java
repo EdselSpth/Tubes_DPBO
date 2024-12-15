@@ -43,10 +43,19 @@ public class Pembelian {
 
     public void refundBuku(int index) {
         try {
-            perpus.hapusBuku(index);
-            BM.books.get(index).setLicense(false);
-            System.out.println("Refund E-Book Berhasil");
-            System.out.println("Uang dikembalikan sebesar Rp." + BM.books.get(index).harga());
+            boolean bukuKetemu = false;
+            for(int i = 0; i < BM.books.size(); i++){
+                if (perpus.koleksiBuku.get(index).getIdBuku().equals(BM.books.get(i).getIdBuku())){
+                    BM.books.get(i).setLicense(false);
+                    System.out.println("Refund E-Book Berhasil");
+                    System.out.println("Uang dikembalikan sebesar Rp." + BM.books.get(index).harga());
+                    perpus.hapusBuku(index);
+                    bukuKetemu = true;
+                } 
+            }
+            if (bukuKetemu == false){
+                throw new Exception("Buku tidak dapat di refund");
+            }
         } catch (Exception e) {
             System.out.println("Error :" + e.getMessage());
         }

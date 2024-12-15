@@ -15,7 +15,7 @@ import java.util.List;
 
 
 public class Perpustakaan {
-    private List<Book> koleksiBuku = new ArrayList<>();
+    public List<Book> koleksiBuku = new ArrayList<>();
     Menu menu = new Menu();
     
     
