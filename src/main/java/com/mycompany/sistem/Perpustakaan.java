@@ -20,7 +20,7 @@ public class Perpustakaan {
     BookManagement BM = new BookManagement();
     
     
-    public void tambahBuku(int index, Book buku) throws Exception{
+    public void tambahBuku(int index, Book buku) {
        koleksiBuku.add(buku);
     }
     
