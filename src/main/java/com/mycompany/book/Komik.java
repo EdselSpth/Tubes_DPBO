@@ -30,7 +30,7 @@ public class Komik extends Book implements IBook{
         System.out.println("Genre : " + this.genre);
         System.out.println("Rating : " + super.getRating());
         System.out.println("Tahun Terbit : " + super.getTahunTerbit());
-        System.out.println("Harga : " + super.getHarga());
+        System.out.println("Harga : " + harga());
     }
 
     public String getGenre() {
