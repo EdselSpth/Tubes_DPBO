@@ -34,9 +34,15 @@ public class BookManagement {
         books.add(new Komik("KMK001", "Doraemon", "Fantasy", "Fujiko F. Fujio", "JapanComics", 20000, 2005, 8.0));
         books.add(new Majalah("MJL001", "Chips", "Teknologi", "Dedy Irvan", "Chips Company", 120000, 2007, 9.5));
     }
-    
+
     public Book getBook(int index) {
         return books.get(index);
+    }
+
+    public void printBuku() {
+        for (Book book : books) {
+            book.toString();
+        }
     }
 
     public void tambahDataBuku() {
@@ -164,42 +170,61 @@ public class BookManagement {
         }
     }
 
-    public void editDataBuku() {
-        try {
-            System.out.println("Edit Data Buku");
-            System.out.print("ID Buku: ");
-            String idBukuHapus = S.nextLine();
-            for (int i = 0; i < books.size(); i++) {
-                if (books.get(i).getIdBuku().equalsIgnoreCase(idBukuHapus)) {
-                    System.out.print("ID Buku : ");
-                    IDBuku = S.nextLine();
-                    books.get(i).setIdBuku(IDBuku);
-                    System.out.print("Judul Buku : ");
-                    judul = S.nextLine();
-                    books.get(i).setJudulBuku(judul);
-                    System.out.print("Nama Penulis : ");
-                    penulis = S.nextLine();
-                    books.get(i).setNamaPenulis(penulis);
-                    System.out.print("Nama Penerbit : ");
-                    penerbit = S.nextLine();
-                    books.get(i).setNamaPenerbit(penerbit);
-                    System.out.print("Harga : ");
-                    harga = S.nextInt();
-                    books.get(i).setHarga(harga);
-                    System.out.print("Tahun Terbit : ");
-                    tahunTerbit = S.nextInt();
-                    books.get(i).setTahunTerbit(tahunTerbit);
-                    System.out.print("Rating : ");
-                    rating = S.nextDouble();
-                    books.get(i).setRating(rating);
-                    System.out.println("Edit Data Buku Berhasil");
-                }else{
-                    throw new Exception("Buku tidak ada!!!");
-                }
-            }
+    public void editDataBuku() throws Exception {
 
-        } catch (Exception e) {
-            System.out.print("Error : ");
+        System.out.println("Edit Data Buku");
+        System.out.print("ID Buku: ");
+        String idBukuHapus = S.nextLine();
+        for (int i = 0; i < books.size(); i++) {
+            if (books.get(i).getIdBuku().equalsIgnoreCase(idBukuHapus)) {
+                menu.pilihanEditBukuPendidikan();
+                System.out.print(">Pilih opsi");
+                int opsi = S.nextInt();
+                switch (opsi) {
+                    case 1:
+                        System.out.print(">Judul Buku Baru: ");
+                        judul = S.nextLine();
+                        books.get(i).setJudulBuku(judul);
+                        break;
+                    case 2:
+                        System.out.print(">Penulis Buku Baru: ");
+                        penulis = S.nextLine();
+                        books.get(i).setNamaPenulis(penulis);
+                        break;
+                    case 3:
+                        System.out.print(">Penerbit Buku Baru: ");
+                        penerbit = S.nextLine();
+                        books.get(i).setNamaPenerbit(penerbit);
+                        break;
+                    case 4:
+                        System.out.print(">Kategori Buku Baru: ");
+                        genre = S.nextLine();
+                        books.get(i).setKategori(genre);
+                        break;
+                    case 5:
+                        System.out.print(">Harga Buku Baru: ");
+                        harga = S.nextInt();
+                        books.get(i).setHarga(harga);
+                        break;
+                    case 6:
+                        System.out.print(">Tahun Terbit Buku Baru: ");
+                        tahunTerbit = S.nextInt();
+                        books.get(i).setTahunTerbit(tahunTerbit);
+                        break;
+                    case 7:
+                        System.out.print(">Rating Buku Baru: ");
+                        rating = S.nextDouble();
+                        books.get(i).setRating(rating);
+                        break;
+                    case 8:
+                        return;
+                    default:
+                        System.out.println("Pilihan tidak valid");
+                }
+            } else {
+                throw new Exception("Buku tidak ada!!!");
+            }
         }
+
     }
 }

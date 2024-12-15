@@ -52,12 +52,20 @@ public class Admin implements IAccount {
                     pilihan = S.nextInt();
                     switch (pilihan) {
                         case 1:
+                            BM.printBuku();
                             BM.tambahDataBuku();
+                            break;
                         case 2:
+                            BM.printBuku();
                             BM.hapusDataBuku();
+                            break;
                         case 3:
                             BM.editDataBuku();
+                            break;
+                        case 4:
+                            return;
                         default:
+                            System.out.println("Masukkan tidak valid");
                     }
                 }
 

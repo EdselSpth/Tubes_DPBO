@@ -57,9 +57,7 @@ public class User implements IAccount {
                         case 1:
                             menu.FormatBukuPrint();
                             System.out.println("Daftar Buku");
-                            for(i = 0; i < BM.books.size(); i++){
-                                System.out.println(BM.books.toString());
-                            }
+                            BM.printBuku();
                             System.out.print("Pilih Buku : ");
                             int milihBuku = S.nextInt();
                             menu.menuBeliBuku();

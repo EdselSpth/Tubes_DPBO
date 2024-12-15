@@ -75,10 +75,10 @@ public class Menu {
         System.out.println("2. Penulis");
         System.out.println("3. Penerbit");
         System.out.println("4. Kategori");
-        System.out.println("5. Bidang");
         System.out.println("5. Harga");
         System.out.println("6. Tahun Terbit");
         System.out.println("7. Rating");
+        System.out.println("8. Kembali");
     }
     
     public void menuBeliBuku(){
