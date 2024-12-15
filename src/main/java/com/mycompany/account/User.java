@@ -104,7 +104,7 @@ public class User implements IAccount {
                                     System.out.println("Pilihan Tidak ada");
                             }
                         case 3:
-                            perpus.showBuku();
+                            perpus.printBuku();
                             System.out.print("Pilih Buku : ");
                             int milihBuku2 = S.nextInt();
                             menu.menuPilihBuku();
