@@ -17,7 +17,6 @@ import java.util.List;
 public class Perpustakaan {
     private List<Book> koleksiBuku = new ArrayList<>();
     Menu menu = new Menu();
-    BookManagement BM = new BookManagement();
     
     
     public void tambahBuku(int index, Book buku) {
