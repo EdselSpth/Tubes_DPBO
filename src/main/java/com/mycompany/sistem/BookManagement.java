@@ -169,24 +169,24 @@ public class BookManagement {
                 if (books.get(i).getIdBuku().equalsIgnoreCase(idBukuHapus)) {
                     System.out.print("ID Buku : ");
                     IDBuku = S.nextLine();
+                    books.get(i).setIdBuku(IDBuku);
                     System.out.print("Judul Buku : ");
                     judul = S.nextLine();
+                    books.get(i).setJudulBuku(judul);
                     System.out.print("Nama Penulis : ");
                     penulis = S.nextLine();
+                    books.get(i).setNamaPenulis(penulis);
                     System.out.print("Nama Penerbit : ");
                     penerbit = S.nextLine();
+                    books.get(i).setNamaPenerbit(penerbit);
                     System.out.print("Harga : ");
                     harga = S.nextInt();
+                    books.get(i).setHarga(harga);
                     System.out.print("Tahun Terbit : ");
                     tahunTerbit = S.nextInt();
+                    books.get(i).setTahunTerbit(tahunTerbit);
                     System.out.print("Rating : ");
                     rating = S.nextDouble();
-                    books.get(i).setIdBuku(IDBuku);
-                    books.get(i).setJudulBuku(judul);
-                    books.get(i).setNamaPenulis(penulis);
-                    books.get(i).setNamaPenerbit(penerbit);
-                    books.get(i).setHarga(harga);
-                    books.get(i).setTahunTerbit(tahunTerbit);
                     books.get(i).setRating(rating);
                     System.out.println("Edit Data Buku Berhasil");
                 }else{
