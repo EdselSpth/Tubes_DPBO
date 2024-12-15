@@ -23,11 +23,26 @@ public class Pembelian {
     String randomID = UUID.randomUUID().toString().substring(0, 12);
 
     public void beliBuku(int index){
-        BM.books.get(index).setLicense(true);
-        System.out.println("Pembelian E-Book Berhasil");
-        System.out.println("Tanggal Pembelian : " + tanggalPembelian);
-        System.out.println("ID Pembelian : " + randomID);
-        BM.books.get(index).printInfoBuku();
+        if (index < BM.books.size()){
+            BM.books.get(index).setLicense(true);
+            System.out.println("Pembelian E-Book Berhasil");
+            System.out.println("Tanggal Pembelian : " + tanggalPembelian);
+            System.out.println("ID Pembelian : " + randomID);
+            BM.books.get(index).printInfoBuku();
+        } else {
+            System.out.println("Maaf pilihan buku yang kamu pilih tidak ada");
+        }
+    }
+    
+    public void refundBuku(int index){
+        if (index < BM.books.size()) {
+            BM.books.get(index).setLicense(false);
+            System.out.println("Refund E-Book Berhasil");
+            System.out.println("Uang dikembalikan sebesar Rp."  + BM.books.get(index).harga());
+        } else {
+            System.out.println("Maaf Pilihan buku yang kamu pilih tidak ada");
+        }
+        
     }
 }
     
