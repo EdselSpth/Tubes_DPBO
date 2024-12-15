@@ -6,57 +6,59 @@ package com.mycompany.sistem;
 
 import com.mycompany.book.Book;
 import java.util.ArrayList;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.UUID;
 
 /**
  *
  * @author りおん塩田
  */
 public class Pembelian {
+
     protected String idPembelian;
-    protected String tanggalPembelian;
-    private ArrayList<String> riwayatPembelian;
+    Perpustakaan perpus = new Perpustakaan();
     BookManagement BM = new BookManagement();
+    LocalDateTime now = LocalDateTime.now();
+    DateTimeFormatter format = DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy HH:mm:ss");
+    String tanggalPembelian = now.format(format);
+    String randomID = UUID.randomUUID().toString().substring(0, 12);
 
-    public Pembelian() {
-        this.riwayatPembelian = new ArrayList<>();
-    }
-    
-    public void showStruk() {
-        System.out.println("ID Pembelian: " + idPembelian);
-        System.out.println("Tanggal Pembelian: " + tanggalPembelian);
-    }
-    
-    public void beliBuku(Perpustakaan perpustakaan, Book bukuDibeli, String idPembelian, String tanggalPembelian) {
-        this.idPembelian = idPembelian;
-        this.tanggalPembelian = tanggalPembelian;
-
-        
-        if (!bukuDibeli.isLicense()) { 
-            for (int i = 0; i < BM.books.size(); i++) {
-                if (BM.books.get(i).getJudulBuku().equals(bukuDibeli.getJudulBuku())){
-                    BM.books.get(i).setLicense(true);
-                    System.out.println("Buku \"" + bukuDibeli.getJudulBuku() + "\" berhasil dibeli dan ditambahkan ke perpustakaan.");
-                }
-            } 
-        } else {
-            System.out.println("Buku \"" + bukuDibeli.getJudulBuku() + "\" sudah berlisensi dan ada di perpustakaan.");
+    public void beliBuku(int index) {
+        try {
+            if (index < BM.books.size() && index >= 0) {
+                BM.books.get(index).setLicense(true);
+                perpus.tambahBuku(index, BM.getBook(index));
+                System.out.println("Pembelian E-Book Berhasil");
+                System.out.println("Tanggal Pembelian : " + tanggalPembelian);
+                System.out.println("ID Pembelian : " + randomID);
+                BM.books.get(index).printInfoBuku();
+            } else {
+                throw new Exception("Buku tidak ditemukan");
+            }
+        } catch (Exception e) {
+            System.out.println("Error :" + e.getMessage());
         }
-        
-        riwayatPembelian.add("ID: " + idPembelian + ", Tanggal: " + tanggalPembelian + ", Buku: " + bukuDibeli.getJudulBuku());
-        
-        System.out.println("\n=== Struk Pembelian ===");
-        System.out.println("ID Pembelian: " + idPembelian);
-        System.out.println("Tanggal Pembelian: " + tanggalPembelian);
-
-        
-        System.out.println("\n=== Buku di Perpustakaan ===");
-        perpustakaan.showBuku();
     }
-    
-    public void showRiwayatPembelian() {
-        System.out.println("\n=== Riwayat Pembelian ===");
-        for (String transaksi : riwayatPembelian) {
-            System.out.println(transaksi);
+
+    public void refundBuku(int index) {
+        try {
+            boolean bukuKetemu = false;
+            for(int i = 0; i < BM.books.size(); i++){
+                if (perpus.koleksiBuku.get(index).getIdBuku().equals(BM.books.get(i).getIdBuku())){
+                    BM.books.get(i).setLicense(false);
+                    System.out.println("Refund E-Book Berhasil");
+                    System.out.println("Uang dikembalikan sebesar Rp." + BM.books.get(index).harga());
+                    perpus.hapusBuku(index);
+                    bukuKetemu = true;
+                } 
+            }
+            if (bukuKetemu == false){
+                throw new Exception("Buku tidak dapat di refund");
+            }
+        } catch (Exception e) {
+            System.out.println("Error :" + e.getMessage());
         }
+
     }
 }

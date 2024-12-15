@@ -9,6 +9,6 @@ package com.mycompany.account;
  * @author りおん塩田
  */
 public interface IAccount {
-    public void loginValidation();
+    public boolean loginValidation();
     public void menuInside();
 }

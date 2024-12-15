@@ -14,13 +14,14 @@ public class Menu {
         System.out.println("Pilih Menu Pengguna");
         System.out.println("1. Admin");
         System.out.println("2. Pengguna");
+        System.out.println("3. Keluar");
     }
     
     public void AplicationName(){
         headerFooter();
         System.out.println("                  BukaBuku");
         System.out.println("               E-Book Platform");
-        System.out.println("Made by Only Edsel Septa Haryanto [103022300016]");
+        System.out.println("Made by Only []");
     }
     
     public void headerFooter(){
@@ -33,7 +34,7 @@ public class Menu {
         System.out.println("1. Tambah Data Buku"); 
         System.out.println("2. Hapus Data Buku");
         System.out.println("3. Edit Data Buku");
-        System.out.println("3. Keluar");
+        System.out.println("4. Kembali");
     }
     
     public void menuUser(){
@@ -41,11 +42,13 @@ public class Menu {
         System.out.println("Menu User");
         System.out.println("1. Tampilkan E-Book");
         System.out.println("2. Cari E-Book");
-        System.out.println("4. Tampilkan E-Book berdasarkan kategori");
-        System.out.println("3. Perpustakaan Pengguna");
+        System.out.println("3. Tampilkan E-Book berdasarkan kategori");
+        System.out.println("4. Perpustakaan Pengguna");
+        System.out.println("5. Kembali");
     }
     
     public void menuPilihBuku(){
+        headerFooter();
         System.out.println("Pilih Opsi");
         System.out.println("1. Baca Buku");
         System.out.println("2. Refund Buku");
@@ -58,13 +61,14 @@ public class Menu {
     }
     
     public void FormatBukuPrint(){
-        System.out.println("No" +  "   Judul Buku" +  "\t\t" +  "Penulis Buku" + "\t\t" + "Penerbit" + "\t\t" +  "Kategori" + "\t" + "Harga" + "\t" + "Rating");
+        System.out.println("No" +  "   Judul Buku" +  "\t\t" +  "Penulis Buku" + "\t\t" + "Penerbit" + "\t\t" +  "Kategori" + "\t" + "Harga" + "\t\t" + "Rating");
     }
     
     public void menuKategoriBuku(){
+        headerFooter();
         System.out.println("1. Pendidikan"); 
-        System.out.println("3. Sejarah");
-        System.out.println("2. Novel");
+        System.out.println("2. Sejarah");
+        System.out.println("3. Novel");
         System.out.println("4. Komik");
         System.out.println("5. Majalah");
     }
@@ -75,11 +79,17 @@ public class Menu {
         System.out.println("2. Penulis");
         System.out.println("3. Penerbit");
         System.out.println("4. Kategori");
-        System.out.println("5. Bidang");
         System.out.println("5. Harga");
         System.out.println("6. Tahun Terbit");
         System.out.println("7. Rating");
+        System.out.println("8. Kembali");
     }
     
+    public void menuBeliBuku(){
+        System.out.println("Mau Lakukan Apa?");
+        System.out.println("1. Lihat Informasi Buku");
+        System.out.println("2. Beli Buku");
+        System.out.println("3. Kembali ke menu");
+    }
     
 }
