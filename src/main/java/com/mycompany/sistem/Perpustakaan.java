@@ -4,6 +4,10 @@
  */
 package com.mycompany.sistem;
 
+import com.mycompany.book.Book;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author りおん塩田
@@ -11,21 +15,32 @@ package com.mycompany.sistem;
 
 
 public class Perpustakaan {
+    private List<Book> koleksiBuku = new ArrayList<>();
     Menu menu = new Menu();
     BookManagement BM = new BookManagement();
     
     
-    public void showBuku(){
+    public void tambahBuku(int index, Book buku) throws Exception{
+       koleksiBuku.add(buku);
+    }
+    
+    public void hapusBuku(int index) throws Exception {
+        if (index >= 0 && index < koleksiBuku.size()) {
+            koleksiBuku.remove(index);    
+        } else {
+            throw new Exception("Buku tidak ditemukan!");
+        }
+    }
+    
+    public void printBuku(){
         menu.headerFooter();
         System.out.println("Perpustakaan Pengguna");
-        if (BM.books.isEmpty()) {
+        if (koleksiBuku.isEmpty()) {
             System.out.println("Tidak Ada E-Book yang sudah anda beli");
         }else {
             menu.FormatBukuPrint();
-            for (int i = 0; i < BM.books.size(); i++) {
-                if (BM.books.get(i).isLicense()){
-                     System.out.println(BM.books.get(i).toString());
-                }
+            for (Book book : koleksiBuku) {
+                book.toString();
             }
         }
     }

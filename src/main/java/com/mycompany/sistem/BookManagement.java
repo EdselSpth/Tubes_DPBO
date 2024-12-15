@@ -34,6 +34,10 @@ public class BookManagement {
         books.add(new Komik("KMK001", "Doraemon", "Fantasy", "Fujiko F. Fujio", "JapanComics", 20000, 2005, 8.0));
         books.add(new Majalah("MJL001", "Chips", "Teknologi", "Dedy Irvan", "Chips Company", 120000, 2007, 9.5));
     }
+    
+    public Book getBook(int index) {
+        return books.get(index);
+    }
 
     public void tambahDataBuku() {
         System.out.println("Pilih kategori buku");
