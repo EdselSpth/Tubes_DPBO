@@ -5,6 +5,7 @@ package com.mycompany.sistem;
 
 import java.util.Scanner;
 import com.mycompany.account.*;
+import java.util.InputMismatchException;
 
 /**
  *
@@ -41,7 +42,10 @@ public class Main {
                     default:
                         System.out.println("Opsi tidak valid!");
                 }
-            } catch (Exception e) {
+            } catch (InputMismatchException e) {
+                System.out.println("Input tidak valid! Mohon masukkan angka.");
+                s.nextLine();
+            }catch (Exception e) {
                 System.out.println("Error : " + e.getMessage());
             }
         }
