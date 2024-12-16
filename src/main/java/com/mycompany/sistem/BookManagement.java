@@ -50,7 +50,9 @@ public class BookManagement {
     public void tambahDataBuku() {
         System.out.println("Pilih kategori buku");
         menu.menuKategoriBuku();
+        System.out.print("Pilih opsi: ");
         int pilihan = S.nextInt();
+        S.nextLine();
         switch (pilihan) {
             case 1:
                 System.out.println("Tambah Buku Pendidikan");
@@ -160,6 +162,8 @@ public class BookManagement {
     }
 
     public void hapusDataBuku() {
+        menu.FormatBukuPrint();
+        printBuku();
         boolean ketemu = false;
         System.out.println("Hapus Data Buku");
         System.out.print("ID Buku: ");
@@ -178,7 +182,8 @@ public class BookManagement {
     }
 
     public void editDataBuku() throws Exception {
-
+        menu.FormatBukuPrint();
+        printBuku();
         System.out.println("Edit Data Buku");
         System.out.print("ID Buku: ");
         String idBukuHapus = S.nextLine();

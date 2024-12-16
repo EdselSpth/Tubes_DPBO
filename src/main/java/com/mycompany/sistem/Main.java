@@ -27,6 +27,7 @@ public class Main {
                 menu.LoginMenu();
                 System.out.print("Pilih opsi: ");
                 int opsi = s.nextInt();
+                s.nextLine();
                 switch (opsi) {
                     case 1:
                         admin.menuInside(admin.loginValidation());

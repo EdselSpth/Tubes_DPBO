@@ -21,7 +21,7 @@ public class Menu {
         headerFooter();
         System.out.println("                  BukaBuku");
         System.out.println("               E-Book Platform");
-        System.out.println("Made by Only []");
+        System.out.println("         Made by BukaBuku Corporation");
     }
     
     public void headerFooter(){
