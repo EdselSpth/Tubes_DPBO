@@ -12,7 +12,7 @@ public class Majalah extends Book implements IBook{
     private String jenisMajalah;
 
     public Majalah(String idBuku, String judulBuku, String jenisMajalah,  String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating) {
-        super(judulBuku, idBuku, namaPenulis, namaPenerbit, harga, tahunTerbit, rating, "Majalah");
+        super(idBuku, judulBuku, namaPenulis, namaPenerbit, harga, tahunTerbit, rating, "Majalah");
         this.jenisMajalah = jenisMajalah;
     }
     

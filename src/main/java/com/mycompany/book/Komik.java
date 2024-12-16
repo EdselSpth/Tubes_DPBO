@@ -12,7 +12,7 @@ public class Komik extends Book implements IBook{
     private String genre;
 
     public Komik(String idBuku, String judulBuku, String genre, String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating) {
-        super(judulBuku, idBuku, namaPenulis, namaPenerbit, harga, tahunTerbit, rating, "Komik");
+        super(idBuku, judulBuku, namaPenulis, namaPenerbit, harga, tahunTerbit, rating, "Komik");
         this.genre = genre;
     }
     

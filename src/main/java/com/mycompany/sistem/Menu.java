@@ -60,8 +60,8 @@ public class Menu {
         System.out.println("1. Kembali ke menu");
     }
     
-    public void FormatBukuPrint(){
-        System.out.println("No" +  "   Judul Buku" +  "\t\t" +  "Penulis Buku" + "\t\t" + "Penerbit" + "\t\t" +  "Kategori" + "\t" + "Harga" + "\t\t" + "Rating");
+    public void FormatBukuPrint() {
+        System.out.printf("%-4s %-30s %-20s %-20s %-15s %-10s %-10s\n","No", "Judul Buku", "Penulis Buku", "Penerbit", "Kategori", "Harga", "Rating");
     }
     
     public void menuKategoriBuku(){
