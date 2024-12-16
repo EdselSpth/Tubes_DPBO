@@ -18,7 +18,6 @@ public class Admin implements IAccount {
 
     Menu menu = new Menu();
     private ArrayList<Account> adminList;
-//    private HashMap<String, Account> admin = new HashMap<>();
     Scanner S = new Scanner(System.in);
     boolean passwordValidation = false;
     BookManagement BM = new BookManagement();
@@ -29,9 +28,6 @@ public class Admin implements IAccount {
         adminList.add(new Account("////", "////"));
         adminList.add(new Account("Kobo1212", "Kobo123"));
         
-//        admin.put("admin", new Account("Admin", "admin123"));
-//        admin.put("edsel", new Account("////", "////"));
-//        admin.put("kobo", new Account("Kobo1212", "Kobo123"));
     }
 
     @Override
