@@ -20,7 +20,6 @@ import java.util.Scanner;
 public class BookManagement {
 
     public ArrayList<Book> books = new ArrayList<>();
-    ;
     Scanner S = new Scanner(System.in);
     Menu menu = new Menu();
     String IDBuku, judul, penulis, penerbit, bidang, periodeSejarah, lokasiSejarah, genre, jenisMajalah;
@@ -40,10 +39,11 @@ public class BookManagement {
     }
 
     public void printBuku() {
-        int no = 1;
+        menu.FormatBukuPrint();
+        int nomor = 1;
         for (Book book : books) {
-            System.out.println(no + book.toString());
-            no++;
+            System.out.printf("%-4d %s\n" + nomor + book);
+            nomor++;
         }
     }
 
@@ -167,11 +167,11 @@ public class BookManagement {
         boolean ketemu = false;
         System.out.println("Hapus Data Buku");
         System.out.print("ID Buku: ");
-        String idBukuHapus = S.nextLine();
+        String idBukuHapus = S.nextLine().trim();
         for (int i = 0; i < books.size(); i++) {
             if (books.get(i).getIdBuku().equalsIgnoreCase(idBukuHapus)) {
-                books.remove(i);
                 ketemu = true;
+                books.remove(i);
             }
         }
         if (ketemu) {
@@ -186,12 +186,14 @@ public class BookManagement {
         printBuku();
         System.out.println("Edit Data Buku");
         System.out.print("ID Buku: ");
-        String idBukuHapus = S.nextLine();
+        String idBukuEdit = S.nextLine().trim();
+        boolean ketemu = false;
         for (int i = 0; i < books.size(); i++) {
-            if (books.get(i).getIdBuku().equalsIgnoreCase(idBukuHapus)) {
+            if (books.get(i).getIdBuku().equalsIgnoreCase(idBukuEdit)) {
                 menu.pilihanEditBukuPendidikan();
                 System.out.print(">Pilih opsi");
                 int opsi = S.nextInt();
+                S.nextLine();
                 switch (opsi) {
                     case 1:
                         System.out.print(">Judul Buku Baru: ");
@@ -216,11 +218,13 @@ public class BookManagement {
                     case 5:
                         System.out.print(">Harga Buku Baru: ");
                         harga = S.nextInt();
+                        S.nextLine();
                         books.get(i).setHarga(harga);
                         break;
                     case 6:
                         System.out.print(">Tahun Terbit Buku Baru: ");
                         tahunTerbit = S.nextInt();
+                        S.nextLine();
                         books.get(i).setTahunTerbit(tahunTerbit);
                         break;
                     case 7:
@@ -233,9 +237,12 @@ public class BookManagement {
                     default:
                         System.out.println("Pilihan tidak valid");
                 }
-            } else {
-                throw new Exception("Buku tidak ada!!!");
             }
+        }
+        if (ketemu) {
+            System.out.println("Buku berhasil diedit");
+        } else {
+            throw new Exception("Buku tidak ditemukan");
         }
 
     }
