@@ -39,12 +39,11 @@ public class BookManagement {
     }
 
     public void printBuku() {
-        menu.FormatBukuPrint();
         int nomor = 1;
         for (Book book : books) {
-            System.out.printf("%-4d %s\n" + nomor + book);
-            nomor++;
-        }
+            System.out.printf("%-4d %s\n", nomor++, book);
+}
+
     }
 
     public void tambahDataBuku() {
