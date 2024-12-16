@@ -12,7 +12,7 @@ public class Novel extends Book implements IBook{
     private String genre;
 
     public Novel(String idBuku, String judulBuku, String genre, String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating) {
-        super(idBuku, judulBuku , namaPenulis, namaPenerbit, harga, tahunTerbit, rating, "Novel");
+        super(idBuku, judulBuku , namaPenulis, namaPenerbit, harga, tahunTerbit, rating, "Novel", false);
         this.genre = genre;
     }
     

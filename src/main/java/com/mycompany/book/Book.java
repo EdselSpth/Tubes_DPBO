@@ -17,9 +17,9 @@ public class Book implements IBook{
     private int tahunTerbit;
     private double rating;
     private String kategori;
-    private boolean license = false;
+    private boolean license;
 
-    public Book(String idBuku, String judulBuku, String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating, String kategori) {
+    public Book(String idBuku, String judulBuku, String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating, String kategori, boolean license) {
         this.judulBuku = judulBuku;
         this.idBuku = idBuku;
         this.namaPenulis = namaPenulis;
@@ -28,6 +28,7 @@ public class Book implements IBook{
         this.tahunTerbit = tahunTerbit;
         this.rating = rating;
         this.kategori = kategori;
+        this.license = license;
     }
 
     public String getJudulBuku() {
@@ -104,8 +105,8 @@ public class Book implements IBook{
     
     @Override
     public String toString() {
-        return "   " + this.judulBuku + "\t\t\t" + this.namaPenulis + "\t\t" + this.namaPenerbit + "\t\t" + this.kategori + "\t\t\t" + this.harga + "\t\t" + this.rating;
-    }
+        return String.format("%-30s %-20s %-20s %-15s %-10.2f %-10.1f", this.judulBuku, this.namaPenulis, this.namaPenerbit, this.kategori, harga(), this.rating);
+}
 
     @Override
     public void printInfoBuku() {

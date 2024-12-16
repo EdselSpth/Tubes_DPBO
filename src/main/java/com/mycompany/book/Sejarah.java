@@ -14,7 +14,7 @@ public class Sejarah extends Book implements IBook {
     private double discountRate = 0.02;
 
     public Sejarah(String idBuku, String judulBuku, String periodeSejarah, String lokasiSejarah, String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating) {
-        super(idBuku, judulBuku, namaPenulis, namaPenerbit, harga, tahunTerbit, rating, "Sejarah");
+        super(idBuku, judulBuku, namaPenulis, namaPenerbit, harga, tahunTerbit, rating, "Sejarah", false);
         this.periodeSejarah = periodeSejarah;
         this.lokasiSejarah = lokasiSejarah;
     }
