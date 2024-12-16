@@ -67,10 +67,13 @@ public class BookManagement {
                 penerbit = S.nextLine();
                 System.out.print("Harga : ");
                 harga = S.nextInt();
+                S.nextLine();
                 System.out.print("Tahun Terbit : ");
                 tahunTerbit = S.nextInt();
+                S.nextLine();
                 System.out.print("Rating : ");
                 rating = S.nextDouble();
+                S.nextLine();
                 books.add(new Pendidikan(IDBuku, judul, bidang, penulis, penerbit, harga, tahunTerbit, rating));
                 break;
             case 2:
@@ -109,10 +112,13 @@ public class BookManagement {
                 penerbit = S.nextLine();
                 System.out.print("Harga : ");
                 harga = S.nextInt();
+                S.nextLine();
                 System.out.print("Tahun Terbit : ");
                 tahunTerbit = S.nextInt();
+                S.nextLine();
                 System.out.print("Rating : ");
                 rating = S.nextDouble();
+                S.nextLine();
                 books.add(new Novel(IDBuku, judul, genre, penulis, penerbit, harga, tahunTerbit, rating));
                 break;
             case 4:
@@ -129,10 +135,13 @@ public class BookManagement {
                 penerbit = S.nextLine();
                 System.out.print("Harga : ");
                 harga = S.nextInt();
+                S.nextLine();
                 System.out.print("Tahun Terbit : ");
                 tahunTerbit = S.nextInt();
+                S.nextLine();
                 System.out.print("Rating : ");
                 rating = S.nextDouble();
+                S.nextLine();
                 books.add(new Komik(IDBuku, judul, genre, penulis, penerbit, harga, tahunTerbit, rating));
                 break;
             case 5:
@@ -149,10 +158,13 @@ public class BookManagement {
                 penerbit = S.nextLine();
                 System.out.print("Harga : ");
                 harga = S.nextInt();
+                S.nextLine();
                 System.out.print("Tahun Terbit : ");
                 tahunTerbit = S.nextInt();
+                S.nextLine();
                 System.out.print("Rating : ");
                 rating = S.nextDouble();
+                S.nextLine();
                 books.add(new Majalah(IDBuku, judul, jenisMajalah, penulis, penerbit, harga, tahunTerbit, rating));
                 break;
             default:
@@ -189,6 +201,7 @@ public class BookManagement {
         boolean ketemu = false;
         for (int i = 0; i < books.size(); i++) {
             if (books.get(i).getIdBuku().equalsIgnoreCase(idBukuEdit)) {
+                ketemu = true;
                 menu.pilihanEditBukuPendidikan();
                 System.out.print(">Pilih opsi");
                 int opsi = S.nextInt();
@@ -229,6 +242,7 @@ public class BookManagement {
                     case 7:
                         System.out.print(">Rating Buku Baru: ");
                         rating = S.nextDouble();
+                        S.nextLine();
                         books.get(i).setRating(rating);
                         break;
                     case 8:
