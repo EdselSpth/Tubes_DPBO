@@ -13,7 +13,7 @@ public class Pendidikan extends Book implements IBook{
     private double discountRate = 0.35;
 
     public Pendidikan(String idBuku,  String judulBuku, String namaBidang, String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating) {
-        super(judulBuku, idBuku, namaPenulis, namaPenerbit, harga, tahunTerbit, rating, "Pendidikan");
+        super( idBuku, judulBuku, namaPenulis, namaPenerbit, harga, tahunTerbit, rating, "Pendidikan");
         this.namaBidang = namaBidang;
     }
     
