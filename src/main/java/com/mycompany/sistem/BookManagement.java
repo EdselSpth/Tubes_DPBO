@@ -42,7 +42,7 @@ public class BookManagement {
         int nomor = 1;
         for (Book book : books) {
             System.out.printf("%-4d %s\n", nomor++, book);
-}
+        }
 
     }
 
@@ -75,6 +75,7 @@ public class BookManagement {
                 rating = S.nextDouble();
                 S.nextLine();
                 books.add(new Pendidikan(IDBuku, judul, bidang, penulis, penerbit, harga, tahunTerbit, rating));
+                System.out.println("Buku berhasil ditambahkan");
                 break;
             case 2:
                 System.out.println("Tambah Buku Sejarah");
@@ -98,7 +99,9 @@ public class BookManagement {
                 S.nextLine();
                 System.out.print("Rating : ");
                 rating = S.nextDouble();
+                S.nextLine();
                 books.add(new Sejarah(IDBuku, judul, periodeSejarah, lokasiSejarah, penulis, penerbit, harga, tahunTerbit, rating));
+                System.out.println("Buku berhasil ditambahkan");
                 break;
             case 3:
                 System.out.println("Tambah Buku Novel");
@@ -122,6 +125,7 @@ public class BookManagement {
                 rating = S.nextDouble();
                 S.nextLine();
                 books.add(new Novel(IDBuku, judul, genre, penulis, penerbit, harga, tahunTerbit, rating));
+                System.out.println("Buku berhasil ditambahkan");
                 break;
             case 4:
                 System.out.println("Tambah Buku Novel");
@@ -145,6 +149,7 @@ public class BookManagement {
                 rating = S.nextDouble();
                 S.nextLine();
                 books.add(new Komik(IDBuku, judul, genre, penulis, penerbit, harga, tahunTerbit, rating));
+                System.out.println("Buku berhasil ditambahkan");
                 break;
             case 5:
                 System.out.println("Tambah Buku Novel");
@@ -168,6 +173,7 @@ public class BookManagement {
                 rating = S.nextDouble();
                 S.nextLine();
                 books.add(new Majalah(IDBuku, judul, jenisMajalah, penulis, penerbit, harga, tahunTerbit, rating));
+                System.out.println("Buku berhasil ditambahkan");
                 break;
             default:
                 System.out.println("Masukkan Nomor Menu Yang Benar!!!");
