@@ -92,8 +92,10 @@ public class BookManagement {
                 penerbit = S.nextLine();
                 System.out.print("Harga : ");
                 harga = S.nextInt();
+                S.nextLine();
                 System.out.print("Tahun Terbit : ");
                 tahunTerbit = S.nextInt();
+                S.nextLine();
                 System.out.print("Rating : ");
                 rating = S.nextDouble();
                 books.add(new Sejarah(IDBuku, judul, periodeSejarah, lokasiSejarah, penulis, penerbit, harga, tahunTerbit, rating));
