@@ -27,7 +27,7 @@ public class Admin implements IAccount {
         adminList.add(new Account("Admin", "admin123"));
         adminList.add(new Account("////", "////"));
         adminList.add(new Account("Kobo1212", "Kobo123"));
-        
+
     }
 
     @Override
@@ -37,52 +37,51 @@ public class Admin implements IAccount {
         System.out.print("> Password : ");
         String password = S.nextLine();
 
-        for (int i = 0; i < adminList.size(); i++){
-            if (username.equals(adminList.get(i).getUsername()) && password.equals(adminList.get(i).getPassword())){
+        for (int i = 0; i < adminList.size(); i++) {
+            if (username.equals(adminList.get(i).getUsername()) && password.equals(adminList.get(i).getPassword())) {
                 passwordValidation = true;
                 return true;
             }
         }
         return false;
     }
-    
 
+    /**
+     *
+     * @param passwordValidation
+     * @throws Exception
+     */
     @Override
-    public void menuInside() {
-        try {
-            if (passwordValidation) {
-                int pilihan = 0;
-                boolean exit = false;
-                while (!exit) {
-                    menu.menuAdmin();
-                    System.out.print("Pilih Menu : ");
-                    pilihan = S.nextInt();
-                    switch (pilihan) {
-                        case 1:
-                            System.out.println("Menu Tambah Buku");
-                            BM.tambahDataBuku();
-                            break;
-                        case 2:
-                            System.out.println("Menu Hapus Buku");
-                            BM.hapusDataBuku();
-                            break;
-                        case 3:
-                            System.out.println("Menu Edit Buku");
-                            BM.editDataBuku();
-                            break;
-                        case 4:
-                            exit = true;
-                            break;
-                        default:
-                            System.out.println("Masukkan tidak valid");
-                    }
+    public void menuInside(boolean passwordValidation) throws Exception {
+        if (passwordValidation) {
+            int pilihan = 0;
+            boolean exit = false;
+            while (!exit) {
+                menu.menuAdmin();
+                System.out.print("Pilih Menu : ");
+                pilihan = S.nextInt();
+                switch (pilihan) {
+                    case 1:
+                        System.out.println("Menu Tambah Buku");
+                        BM.tambahDataBuku();
+                        break;
+                    case 2:
+                        System.out.println("Menu Hapus Buku");
+                        BM.hapusDataBuku();
+                        break;
+                    case 3:
+                        System.out.println("Menu Edit Buku");
+                        BM.editDataBuku();
+                        break;
+                    case 4:
+                        exit = true;
+                        break;
+                    default:
+                        System.out.println("Masukkan tidak valid");
                 }
-            } else {
-                throw new Exception("Username atau Password Salah");
             }
-
-        } catch (Exception ex) {
-            ex.getMessage();
+        } else {
+            throw new Exception("Username atau Password Salah");
         }
 
     }

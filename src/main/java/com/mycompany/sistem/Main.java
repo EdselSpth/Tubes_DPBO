@@ -21,32 +21,30 @@ public class Main {
         menu.AplicationName();
         boolean valid = false;
         boolean exit = false;
-        
-        while(!exit) {
-            menu.LoginMenu();
-            System.out.print("Pilih opsi: ");
-            int opsi = s.nextInt();
-            switch(opsi) {
-                case 1:
-                    valid = admin.loginValidation();
-                    if (valid) {
-                        admin.menuInside();
-                    }
-                    break;
-                case 2:
-                    valid = user.loginValidation();
-                    if (valid) {
-                        user.menuInside();
-                    }
-                    break;
-                case 3:
-                    System.out.println("Terima kasih telah menggunakan aplikasi ini!");
-                    s.close();
-                    exit = true;
-                    break;
-                default:
-                    System.out.println("Opsi tidak valid!");
+        while (!exit) {
+            try {
+                menu.LoginMenu();
+                System.out.print("Pilih opsi: ");
+                int opsi = s.nextInt();
+                switch (opsi) {
+                    case 1:
+                        admin.menuInside(admin.loginValidation());
+                        break;
+                    case 2:
+                        user.menuInside(user.loginValidation());
+                        break;
+                    case 3:
+                        System.out.println("Terima kasih telah menggunakan aplikasi ini!");
+                        s.close();
+                        exit = true;
+                        break;
+                    default:
+                        System.out.println("Opsi tidak valid!");
                 }
+            } catch (Exception e) {
+                System.out.println("Error : " + e.getMessage());
+            }
         }
+
     }
 }

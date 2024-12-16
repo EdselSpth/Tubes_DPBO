@@ -10,5 +10,5 @@ package com.mycompany.account;
  */
 public interface IAccount {
     public boolean loginValidation();
-    public void menuInside();
+    public void menuInside(boolean passwordValidation) throws Exception;
 }
