@@ -100,7 +100,6 @@ public class User implements IAccount {
                         break;
                     case 2:
                         System.out.print("Masukkan nama buku yang dicari : ");
-                        S.nextLine();
                         int indexc2 = 0;
                         String dicari = S.nextLine();
                         for (i = 0; i < BM.books.size(); i++) {
