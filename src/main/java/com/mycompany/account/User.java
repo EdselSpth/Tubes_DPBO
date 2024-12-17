@@ -82,9 +82,9 @@ public class User implements IAccount {
                         }
                         
                         menu.menuBeliBuku();
-                        System.out.print("Pilih :");
+                        System.out.print("Pilih Menu : ");
                         int pilihanSistem = S.nextInt();
-                        ;
+                        S.nextLine();
                         switch (pilihanSistem) {
                             case 1:
                                 BM.books.get(index).printInfoBuku();
@@ -114,11 +114,7 @@ public class User implements IAccount {
                         pilihanSistem = S.nextInt();
                         switch (pilihanSistem) {
                             case 1:
-                                if (indexc2 < 0 || indexc2 > BM.books.size()) {
-                                    System.out.println("Pilihan buku tidak ada");
-                                } else {
-                                    BM.books.get(indexc2).printInfoBuku();
-                                }
+                                BM.books.get(indexc2).printInfoBuku();
                                 break;
                             case 2:
                                 indexc2 = i;
@@ -193,22 +189,32 @@ public class User implements IAccount {
                     case 4:
                         if (!perpus.koleksiBuku.isEmpty()) {
                             perpus.printBuku();
-                            System.out.print("Pilih Buku : ");
+                            System.out.print("Pilih Buku (1 - " + perpus.koleksiBuku.size() + "): ");
                             int milihBuku2 = S.nextInt();
+                            
+                            if (milihBuku2 < 1 || milihBuku2 > perpus.koleksiBuku.size()) {
+                                System.out.println("Pilihan buku tidak valid");
+                                break;
+                            }
+                            
                             menu.menuPilihBuku();
+                            System.out.print("Pilih Menu : ");
                             int pilihanc4 = S.nextInt();
+                            
                             switch (pilihanc4) {
                                 case 1:
                                     RB.bacaBuku();
                                     menu.menuBacaBuku();
+                                    System.out.print("Pilih Menu : ");
                                     int pilihanc41 = S.nextInt();
                                     if (pilihanc41 == 1) {
                                         break;
                                     } else {
                                         System.out.println("Pilihan tidak tersedia");
                                     }
+                                    break;
                                 case 2:
-                                    P.refundBuku(milihBuku2 - 1);
+                                    P.refundBuku(milihBuku2 - 1, BM, perpus);
                                     break;
                                 case 3:
                                     break;

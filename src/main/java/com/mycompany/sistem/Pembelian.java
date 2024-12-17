@@ -41,19 +41,27 @@ public class Pembelian {
         }
     }
 
-    public void refundBuku(int index) {
+    public void refundBuku(int index, BookManagement BM, Perpustakaan perpus) {
         try {
+            if(index < 0 || index > perpus.koleksiBuku.size()) {
+                throw new Exception("Index buku tidak valid!");
+            }
+            
             boolean bukuKetemu = false;
+            Book bukuRefund = perpus.koleksiBuku.get(index);
+            
             for(int i = 0; i < BM.books.size(); i++){
-                if (perpus.koleksiBuku.get(index).getIdBuku().equals(BM.books.get(i).getIdBuku())){
+                if (bukuRefund.getIdBuku().equals(BM.books.get(i).getIdBuku())){
                     BM.books.get(i).setLicense(false);
                     System.out.println("Refund E-Book Berhasil");
                     System.out.println("Uang dikembalikan sebesar Rp." + BM.books.get(index).harga());
                     perpus.hapusBuku(index);
                     bukuKetemu = true;
+                    break;
                 } 
             }
-            if (bukuKetemu == false){
+            
+            if (!bukuKetemu){
                 throw new Exception("Buku tidak dapat di refund");
             }
         } catch (Exception e) {

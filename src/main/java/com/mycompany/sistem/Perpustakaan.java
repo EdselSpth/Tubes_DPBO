@@ -32,6 +32,7 @@ public class Perpustakaan {
     }
     
     public void printBuku(){
+        int no = 1;
         menu.headerFooter();
         System.out.println("Perpustakaan Pengguna");
         if (koleksiBuku.isEmpty()) {
@@ -39,7 +40,8 @@ public class Perpustakaan {
         }else {
             menu.FormatBukuPrint();
             for (Book book : koleksiBuku) {
-                System.out.println(book.toString());
+                System.out.println(no + " " + book.toString());
+                no++;
             }
         }
     }
