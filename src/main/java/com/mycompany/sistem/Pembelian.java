@@ -24,7 +24,7 @@ public class Pembelian {
     String tanggalPembelian = now.format(format);
     String randomID = UUID.randomUUID().toString().substring(0, 12);
 
-    public void beliBuku(int index) {
+    public void beliBuku(int index, BookManagement BM, Perpustakaan perpus) {
         try {
             if (index < BM.books.size() && index >= 0) {
                 BM.books.get(index).setLicense(true);

@@ -65,6 +65,7 @@ public class User implements IAccount {
                 menu.menuUser();
                 System.out.print("Pilih Menu : ");
                 pilihan = S.nextInt();
+                S.nextLine();
                 switch (pilihan) {
                     case 1:
                         System.out.println("Daftar Buku");
@@ -72,21 +73,24 @@ public class User implements IAccount {
                         BM.printBuku();
                         System.out.print("Pilih Buku : ");
                         int milihBuku = S.nextInt();
+                        S.nextLine();
+                        int index = milihBuku - 1;
+                        
+                        if (index < 0 || index >= BM.books.size()) {
+                            System.out.println("Pilihan Buku tidak ada");
+                            break;
+                        }
+                        
                         menu.menuBeliBuku();
                         System.out.print("Pilih :");
                         int pilihanSistem = S.nextInt();
-                        int index = milihBuku - 1;
                         ;
                         switch (pilihanSistem) {
                             case 1:
-                                if (index < 0 || index > BM.books.size()) {
-                                    System.out.println("Pilihan buku tidak ada");
-                                } else {
-                                    BM.books.get(index).printInfoBuku();
-                                }
+                                BM.books.get(index).printInfoBuku();
                                 break;
                             case 2:
-                                P.beliBuku(index);
+                                P.beliBuku(index, BM, perpus);
                                 break;
                             case 3:
                                 break;
@@ -118,7 +122,7 @@ public class User implements IAccount {
                                 break;
                             case 2:
                                 indexc2 = i;
-                                P.beliBuku(indexc2);
+                                P.beliBuku(indexc2, BM, perpus);
                                 break;
                             case 3:
                                 break;
