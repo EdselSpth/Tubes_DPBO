@@ -105,8 +105,10 @@ public class Book implements IBook{
     
     @Override
     public String toString() {
-        return String.format("%-30s %-20s %-20s %-15s %-10.2f %-10.1f", this.judulBuku, this.namaPenulis, this.namaPenerbit, this.kategori, harga(), this.rating);
+        return String.format("%-30s %-20s %-20s %-15s %-10.2f %-10.1f",
+                             this.judulBuku, this.namaPenulis, this.namaPenerbit, this.kategori, this.harga, this.rating);
 }
+
 
     @Override
     public void printInfoBuku() {

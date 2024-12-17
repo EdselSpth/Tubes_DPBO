@@ -44,7 +44,7 @@ public class Main {
                         System.out.println("Opsi tidak valid!");
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Input tidak valid! Mohon masukkan angka."); 
+                System.out.println("Input tidak valid! Mohon masukkan angka yang benar.");
                 s.nextLine();
             }catch (Exception e) {
                 System.out.println("Error : " + e.getMessage());

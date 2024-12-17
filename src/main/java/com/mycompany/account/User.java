@@ -114,11 +114,13 @@ public class User implements IAccount {
                                 } else {
                                     BM.books.get(indexc2).printInfoBuku();
                                 }
+                                break;
                             case 2:
                                 indexc2 = i;
                                 P.beliBuku(indexc2);
+                                break;
                             case 3:
-                                return;
+                                break;
                             default:
                                 System.out.println("Pilihan Tidak ada");
                         }
@@ -202,6 +204,7 @@ public class User implements IAccount {
                                     }
                                 case 2:
                                     P.refundBuku(milihBuku2 - 1);
+                                    break;
                                 case 3:
                                     break;
                                 default:
