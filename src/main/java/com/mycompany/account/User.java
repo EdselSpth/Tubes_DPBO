@@ -96,13 +96,14 @@ public class User implements IAccount {
                         break;
                     case 2:
                         System.out.print("Masukkan nama buku yang dicari : ");
+                        S.nextLine();
                         int indexc2 = 0;
                         String dicari = S.nextLine();
                         for (i = 0; i < BM.books.size(); i++) {
                             if (BM.books.get(i).getJudulBuku().equalsIgnoreCase(dicari)) {
                                 indexc2 = i;
                             } else {
-                                System.out.println("Buku" + dicari + "tidak tersedia");
+                                System.out.println("Buku " + dicari + " tidak tersedia");
                             }
                         }
                         menu.menuPilihBuku();
