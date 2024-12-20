@@ -54,7 +54,7 @@ public class Pembelian {
                 if (bukuRefund.getIdBuku().equals(BM.books.get(i).getIdBuku())){
                     BM.books.get(i).setLicense(false);
                     System.out.println("Refund E-Book Berhasil");
-                    System.out.println("Uang dikembalikan sebesar Rp." + BM.books.get(index).harga());
+                    System.out.println("Uang dikembalikan sebesar Rp." + BM.books.get(i).harga());
                     perpus.hapusBuku(index);
                     bukuKetemu = true;
                     break;

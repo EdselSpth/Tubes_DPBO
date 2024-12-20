@@ -99,25 +99,22 @@ public class User implements IAccount {
                         }
                         break;
                     case 2:
-                        System.out.print("Masukkan nama buku yang dicari : ");
-                        int indexc2 = 0;
-                        String dicari = S.nextLine();
-                        for (i = 0; i < BM.books.size(); i++) {
-                            if (BM.books.get(i).getJudulBuku().equalsIgnoreCase(dicari)) {
-                                indexc2 = i;
-                            } else {
-                                System.out.println("Buku " + dicari + " tidak tersedia");
-                            }
+                        System.out.print("Judul buku yang ingin dicari di perpus: ");
+                        String judul = S.nextLine();
+                        int indexc2 = perpus.cariBuku(judul);
+                        if (indexc2==-1){
+                            System.out.println("Buku "+ judul +" tidak ditemukan di perpus anda");
+                            break;
                         }
                         menu.menuPilihBuku();
+                        System.out.print("Pilih opsi: ");
                         pilihanSistem = S.nextInt();
                         switch (pilihanSistem) {
                             case 1:
-                                BM.books.get(indexc2).printInfoBuku();
+                                perpus.koleksiBuku.get(indexc2).printInfoBuku();
                                 break;
                             case 2:
-                                indexc2 = i;
-                                P.beliBuku(indexc2, BM, perpus);
+                                P.refundBuku(indexc2, BM, perpus);
                                 break;
                             case 3:
                                 break;

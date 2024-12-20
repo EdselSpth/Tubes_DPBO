@@ -45,5 +45,13 @@ public class Perpustakaan {
             }
         }
     }
-    
+    public int cariBuku(String judul){
+        for (int i = 0; i < koleksiBuku.size(); i++) {
+            Book get = koleksiBuku.get(i);
+            if(koleksiBuku.get(i).getJudulBuku().equalsIgnoreCase(judul)){
+                return i;
+            }
+        }
+        return -1;
+    }
 }

@@ -49,7 +49,7 @@ public class Menu {
     
     public void menuPilihBuku(){
         headerFooter();
-        System.out.println("Pilih Opsi");
+        System.out.println("Buku ditemukan!");
         System.out.println("1. Baca Buku");
         System.out.println("2. Refund Buku");
         System.out.println("3. Kembali ke menu");
