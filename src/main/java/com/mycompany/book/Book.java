@@ -41,10 +41,6 @@ public abstract class Book implements IBook {
         comments.put(nama, new Comment(comment, tanggal));
     }
 
-    public void deleteComment(String nama) {
-        comments.remove(nama);
-    }
-
     public void printComment() {
         System.out.println("================Komentar " + this.judulBuku + " =================");
         if (comments.isEmpty()) {
