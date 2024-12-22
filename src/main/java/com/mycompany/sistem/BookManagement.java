@@ -267,4 +267,14 @@ public class BookManagement {
         }
 
     }
+    
+    public int cariBuku(String judul){
+        for (int i = 0; i < books.size(); i++) {
+            Book get = books.get(i);
+            if (books.get(i).getJudulBuku().equalsIgnoreCase(judul)){
+                return i;
+            }
+        }
+        return -1;
+    }
 }

@@ -49,7 +49,7 @@ public class Menu {
     
     public void menuPilihBuku(){
         headerFooter();
-        System.out.println("Buku ditemukan!");
+        System.out.println("Pilih Menu Buku");
         System.out.println("1. Baca Buku");
         System.out.println("2. Refund Buku");
         System.out.println("3. Kembali ke menu");
@@ -92,4 +92,10 @@ public class Menu {
         System.out.println("3. Kembali ke menu");
     }
     
+    public static void menuPerpustakaan(){
+        System.out.println("Menu Perpustakaan");
+        System.out.println("1. Tampilkan seluruh buku");
+        System.out.println("2. Cari buku");
+        System.out.println("3. Kembali");
+    }
 }

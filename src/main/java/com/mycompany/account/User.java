@@ -75,12 +75,12 @@ public class User implements IAccount {
                         int milihBuku = S.nextInt();
                         S.nextLine();
                         int index = milihBuku - 1;
-                        
+
                         if (index < 0 || index >= BM.books.size()) {
                             System.out.println("Pilihan Buku tidak ada");
                             break;
                         }
-                        
+
                         menu.menuBeliBuku();
                         System.out.print("Pilih Menu : ");
                         int pilihanSistem = S.nextInt();
@@ -99,27 +99,30 @@ public class User implements IAccount {
                         }
                         break;
                     case 2:
-                        System.out.print("Judul buku yang ingin dicari di perpus: ");
+                        System.out.print("Judul buku yang ingin dicari: ");
                         String judul = S.nextLine();
-                        int indexc2 = perpus.cariBuku(judul);
-                        if (indexc2==-1){
-                            System.out.println("Buku "+ judul +" tidak ditemukan di perpus anda");
+                        index = BM.cariBuku(judul);
+                        if (index == -1) {
+                            System.out.println("Buku " + judul + " tidak ditemukan");
                             break;
+                        } else {
+                            System.out.println("Buku ditemukan!");
                         }
-                        menu.menuPilihBuku();
-                        System.out.print("Pilih opsi: ");
+                        menu.menuBeliBuku();
+                        System.out.print("Pilih Menu : ");
                         pilihanSistem = S.nextInt();
+                        S.nextLine();
                         switch (pilihanSistem) {
                             case 1:
-                                perpus.koleksiBuku.get(indexc2).printInfoBuku();
+                                BM.books.get(index).printInfoBuku();
                                 break;
                             case 2:
-                                P.refundBuku(indexc2, BM, perpus);
+                                P.beliBuku(index, BM, perpus);
                                 break;
                             case 3:
                                 break;
                             default:
-                                System.out.println("Pilihan Tidak ada");
+                                System.out.println("Pilihan Menu Tidak tersedia");
                         }
                         break;
                     case 3:
@@ -183,43 +186,86 @@ public class User implements IAccount {
                         }
                         break;
                     case 4:
-                        if (!perpus.koleksiBuku.isEmpty()) {
-                            perpus.printBuku();
-                            System.out.print("Pilih Buku (1 - " + perpus.koleksiBuku.size() + "): ");
-                            int milihBuku2 = S.nextInt();
-                            
-                            if (milihBuku2 < 1 || milihBuku2 > perpus.koleksiBuku.size()) {
-                                System.out.println("Pilihan buku tidak valid");
-                                break;
-                            }
-                            
-                            menu.menuPilihBuku();
-                            System.out.print("Pilih Menu : ");
-                            int pilihanc4 = S.nextInt();
-                            
-                            switch (pilihanc4) {
-                                case 1:
-                                    RB.bacaBuku();
-                                    menu.menuBacaBuku();
-                                    System.out.print("Pilih Menu : ");
-                                    int pilihanc41 = S.nextInt();
-                                    if (pilihanc41 == 1) {
+                        Menu.menuPerpustakaan();
+                        System.out.print("Pilih Menu: ");
+                        pilihan = S.nextInt();
+                        S.nextLine();
+                        switch (pilihan) {
+                            case 1:
+                                if (!perpus.koleksiBuku.isEmpty()) {
+                                    perpus.printBuku();
+                                    System.out.print("Pilih Buku (1 - " + perpus.koleksiBuku.size() + "): ");
+                                    int milihBuku2 = S.nextInt();
+
+                                    if (milihBuku2 < 1 || milihBuku2 > perpus.koleksiBuku.size()) {
+                                        System.out.println("Pilihan buku tidak valid");
                                         break;
-                                    } else {
-                                        System.out.println("Pilihan tidak tersedia");
                                     }
+
+                                    menu.menuPilihBuku();
+                                    System.out.print("Pilih Menu : ");
+                                    int pilihanc4 = S.nextInt();
+
+                                    switch (pilihanc4) {
+                                        case 1:
+                                            RB.bacaBuku();
+                                            menu.menuBacaBuku();
+                                            System.out.print("Pilih Menu : ");
+                                            int pilihanc41 = S.nextInt();
+                                            if (pilihanc41 == 1) {
+                                                break;
+                                            } else {
+                                                System.out.println("Pilihan tidak tersedia");
+                                            }
+                                            break;
+                                        case 2:
+                                            P.refundBuku(milihBuku2 - 1, BM, perpus);
+                                            break;
+                                        case 3:
+                                            break;
+                                        default:
+                                            System.out.println("Pilihan tidak tersedia");
+                                    }
+                                } else {
+                                    System.out.println("Belum ada buku yang dimiliki");
+                                }
+                                break;
+                            case 2:
+                                System.out.print("Judul buku yang ingin dicari di perpus: ");
+                                String title = S.nextLine();
+                                int indeks = perpus.cariBuku(title);
+                                if (indeks == -1) {
+                                    System.out.println("Buku " + title + " tidak ditemukan di perpus anda");
                                     break;
-                                case 2:
-                                    P.refundBuku(milihBuku2 - 1, BM, perpus);
-                                    break;
-                                case 3:
-                                    break;
-                                default:
-                                    System.out.println("Pilihan tidak tersedia");
-                            }
-                        } else {
-                            System.out.println("Belum ada buku yang dimiliki");
+                                }
+                                menu.menuPilihBuku();
+                                System.out.print("Pilih opsi: ");
+                                pilihanSistem = S.nextInt();
+                                switch (pilihanSistem) {
+                                    case 1:
+                                        RB.bacaBuku();
+                                        menu.menuBacaBuku();
+                                        System.out.print("Pilih Menu : ");
+                                        int pilihanc41 = S.nextInt();
+                                        if (pilihanc41 == 1) {
+                                            break;
+                                        } else {
+                                            System.out.println("Pilihan tidak tersedia");
+                                        }
+                                        break;
+                                    case 2:
+                                        P.refundBuku(indeks, BM, perpus);
+                                        break;
+                                    case 3:
+                                        break;
+                                    default:
+                                        System.out.println("Pilihan Tidak ada");
+                                }
+                                break;
+                            case 3:
+                                break;
                         }
+
                         break;
                     case 5:
                         exit = true;
