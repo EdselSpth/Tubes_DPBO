@@ -40,4 +40,18 @@ public class Komik extends Book {
     public void setGenre(String genre) {
         this.genre = genre;
     }
+
+    @Override
+    public String toStringAdmin() {
+        return String.format("%-10s %-30s %-20s %-20s %-15s %-10.2f %-10.1f", super.getIdBuku(), super.getJudulBuku(), super.getNamaPenulis(), super.getNamaPenerbit(), super.getKategori(), harga(), super.getRating());
+    }
+    
+    @Override
+    public String toString() {
+        return String.format("%-30s %-20s %-20s %-15s %-10.2f %-10.1f",
+                super.getJudulBuku(), super.getNamaPenulis(), super.getNamaPenerbit(), super.getKategori(), harga(), super.getHarga());
+    }
+    
+    
+
 }

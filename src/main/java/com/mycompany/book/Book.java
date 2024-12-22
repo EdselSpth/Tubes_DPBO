@@ -129,8 +129,7 @@ public abstract class Book implements IBook {
     }
 
     @Override
-    public String toString() {
-        return String.format("%-30s %-20s %-20s %-15s %-10.2f %-10.1f",
-                this.judulBuku, this.namaPenulis, this.namaPenerbit, this.kategori, this.harga, this.rating);
-    }
+    public abstract String toString();
+    
+    public abstract String toStringAdmin();
 }

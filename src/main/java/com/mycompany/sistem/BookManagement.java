@@ -43,11 +43,18 @@ public class BookManagement {
             System.out.printf("%-4d %s\n", nomor++, book);
         }
     }
+    
+    public void printBukuAdmin() {
+        int nomor = 1;
+        for (Book book : books) {
+            System.out.printf("%-4d %s\n", nomor++, book.toStringAdmin());
+        }
+    }
 
     public void tambahDataBuku() {
         System.out.println("Pilih kategori buku");
         menu.menuKategoriBuku();
-        System.out.print("Pilih opsi: ");
+        System.out.print("Pilih opsi : ");
         int pilihan = S.nextInt();
         S.nextLine();
         switch (pilihan) {
@@ -199,8 +206,8 @@ public class BookManagement {
     }
 
     public void editDataBuku() throws Exception {
-        menu.FormatBukuPrint();
-        printBuku();
+        menu.FormatBukuPrintAdmin();
+        printBukuAdmin();
         System.out.println("Edit Data Buku");
         System.out.print("ID Buku: ");
         String idBukuEdit = S.nextLine().trim();

@@ -134,60 +134,65 @@ public class User implements IAccount {
                         System.out.println("Pilih Kategori yang mau ditampilkan");
                         menu.menuKategoriBuku();
                         int pilihanc3 = S.nextInt();
-                        menu.FormatBukuPrint();
                         switch (pilihanc3) {
                             case 1:
                                 System.out.println("Daftar Buku Pendidikan");
+                                menu.FormatBukuPrint();
                                 int no = 1;
                                 for (Book book : BM.books) {
                                     if (book instanceof Pendidikan) {
-                                        System.out.println(no + book.toString());
+                                        System.out.printf("%-4d %s\n", no, book);
                                         no++;
                                     }
                                 }
                                 break;
                             case 2:
                                 System.out.println("Daftar Buku Sejarah");
+                                menu.FormatBukuPrint();
                                 no = 1;
                                 for (Book book : BM.books) {
                                     if (book instanceof Sejarah) {
-                                        System.out.println(no + book.toString());
+                                        System.out.printf("%-4d %s\n", no, book);
                                         no++;
                                     }
                                 }
                                 break;
                             case 3:
                                 System.out.println("Daftar Buku Novel");
+                                menu.FormatBukuPrint();
                                 no = 1;
                                 for (Book book : BM.books) {
                                     if (book instanceof Novel) {
-                                        System.out.println(no + book.toString());
+                                        System.out.printf("%-4d %s\n", no, book);
                                         no++;
                                     }
                                 }
                                 break;
                             case 4:
                                 System.out.println("Daftar Buku Komik");
+                                menu.FormatBukuPrint();
                                 no = 1;
                                 for (Book book : BM.books) {
                                     if (book instanceof Komik) {
-                                        System.out.println(no + book.toString());
+                                        System.out.printf("%-4d %s\n", no, book);
                                         no++;
                                     }
                                 }
                                 break;
                             case 5:
                                 System.out.println("Daftar Buku Majalah");
+                                menu.FormatBukuPrint();
                                 no = 1;
                                 for (Book book : BM.books) {
                                     if (book instanceof Majalah) {
-                                        System.out.println(no + book.toString());
+                                        System.out.printf("%-4d %s\n", no, book);
                                         no++;
                                     }
                                 }
                                 break;
                             default:
                                 System.out.println("Pilihan tidak tersedia");
+                                break;
                         }
                         break;
                     case 4:

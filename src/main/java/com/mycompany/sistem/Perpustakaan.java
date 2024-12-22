@@ -40,7 +40,7 @@ public class Perpustakaan {
         }else {
             menu.FormatBukuPrint();
             for (Book book : koleksiBuku) {
-                System.out.println(no + " " + book.toString());
+                System.out.printf("%-4d %s\n", no, book);
                 no++;
             }
         }
