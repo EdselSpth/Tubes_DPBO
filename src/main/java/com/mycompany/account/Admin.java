@@ -8,7 +8,6 @@ import com.mycompany.sistem.BookManagement;
 import java.util.ArrayList;
 import java.util.Scanner;
 import com.mycompany.sistem.Menu;
-import java.util.HashMap;
 
 /**
  *
@@ -20,7 +19,7 @@ public class Admin implements IAccount {
     private ArrayList<Account> adminList;
     Scanner S = new Scanner(System.in);
     boolean passwordValidation = false;
-    BookManagement BM = new BookManagement();
+    BookManagement BM = BookManagement.getInstance();
 
     public Admin() {
         adminList = new ArrayList<>();
@@ -71,7 +70,7 @@ public class Admin implements IAccount {
                         break;
                     case 3:
                         System.out.println("Menu Edit Buku");
-                        BM.editDataBuku();
+                        BM.editDataBuku(BM);
                         break;
                     case 4:
                         exit = true;

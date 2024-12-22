@@ -30,7 +30,7 @@ public class User implements IAccount {
     Scanner S = new Scanner(System.in);
     Menu menu = new Menu();
     boolean passwordValidation = false;
-    BookManagement BM = new BookManagement();
+    BookManagement BM = BookManagement.getInstance();
     Pembelian P = new Pembelian();
     Perpustakaan perpus = new Perpustakaan();
     ReadBook RB = new ReadBook();

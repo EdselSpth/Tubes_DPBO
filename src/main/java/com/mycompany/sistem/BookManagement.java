@@ -18,6 +18,7 @@ import java.util.Scanner;
  * @author りおん塩田
  */
 public class BookManagement {
+    private static BookManagement instance;
     public ArrayList<Book> books = new ArrayList<>();
     Scanner S = new Scanner(System.in);
     Menu menu = new Menu();
@@ -26,11 +27,19 @@ public class BookManagement {
     double rating;
 
     public BookManagement() {
+        
         books.add(new Novel("Nov001", "Bungo Stray Dogs", "Fantasy", "Kafka Asagiri", "Kadokawa", 45000, 2020, 10.0));
         books.add(new Pendidikan("Pen001", "Matematika : Aljabar", "Matematika", "Alisha Raven", "MathGroup", 4000, 2015, 7.5));
         books.add(new Sejarah("Sej001", "World History", "Past-Present", "Dunia", "Adolf Hitler", "German Corpse", 80000, 1955, 10.0));
         books.add(new Komik("KMK001", "Doraemon", "Fantasy", "Fujiko F. Fujio", "JapanComics", 20000, 2005, 8.0));
         books.add(new Majalah("MJL001", "Chips", "Teknologi", "Dedy Irvan", "Chips Company", 90000, 2007, 9.5));
+    }
+    
+    public static BookManagement getInstance() {
+        if (instance == null) {
+            instance = new BookManagement();
+        }
+        return instance;
     }
     
     public Book getBook(int index) {
@@ -190,7 +199,7 @@ public class BookManagement {
         printBuku();
         boolean ketemu = false;
         System.out.println("Hapus Data Buku");
-        System.out.print("ID Buku: ");
+        System.out.print("Masukkan ID Buku (bukan no buku): ");
         String idBukuHapus = S.nextLine().trim();
         for (int i = 0; i < books.size(); i++) {
             if (books.get(i).getIdBuku().equalsIgnoreCase(idBukuHapus)) {
@@ -205,7 +214,7 @@ public class BookManagement {
         }
     }
 
-    public void editDataBuku() throws Exception {
+    public void editDataBuku(BookManagement BM) throws Exception {
         menu.FormatBukuPrintAdmin();
         printBukuAdmin();
         System.out.println("Edit Data Buku");
