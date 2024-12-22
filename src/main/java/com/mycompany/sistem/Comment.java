@@ -9,29 +9,20 @@ package com.mycompany.sistem;
  * @author りおん塩田
  */
 public class Comment {
-    private String Account;
+    private String tanggal;
     private String Comment;
 
-    public Comment(String Account, String Comment) {
-        this.Account = Account;
+    public Comment(String Comment, String tanggal) {
         this.Comment = Comment;
+        this.tanggal = tanggal;
     }
 
-    
-    public String getAccount() {
-        return Account;
-    }
-
-    public void setAccount(String Account) {
-        this.Account = Account;
+    public String getTanggal() {
+        return tanggal;
     }
 
     public String getComment() {
         return Comment;
-    }
-
-    public void setComment(String Comment) {
-        this.Comment = Comment;
     }
     
     

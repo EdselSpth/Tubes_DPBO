@@ -56,8 +56,10 @@ public class Menu {
     }
     
     public void menuBacaBuku(){
+        headerFooter();
         System.out.println("Pilih Opsi");
-        System.out.println("1. Kembali ke menu");
+        System.out.println("1. Komentar");
+        System.out.println("2. Kembali ke menu");
     }
     
     public void FormatBukuPrint() {
@@ -74,6 +76,7 @@ public class Menu {
     }
     
     public void pilihanEditBukuPendidikan(){
+        this.headerFooter();
         System.out.println("Pilih Opsi Edit");
         System.out.println("1. Judul");
         System.out.println("2. Penulis");
@@ -92,7 +95,8 @@ public class Menu {
         System.out.println("3. Kembali ke menu");
     }
     
-    public static void menuPerpustakaan(){
+    public void menuPerpustakaan(){
+        this.headerFooter();
         System.out.println("Menu Perpustakaan");
         System.out.println("1. Tampilkan seluruh buku");
         System.out.println("2. Cari buku");

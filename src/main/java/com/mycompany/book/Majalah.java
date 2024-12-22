@@ -8,7 +8,7 @@ package com.mycompany.book;
  *
  * @author りおん塩田
  */
-public class Majalah extends Book implements IBook{
+public class Majalah extends Book {
     private String jenisMajalah;
 
     public Majalah(String idBuku, String judulBuku, String jenisMajalah,  String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating) {

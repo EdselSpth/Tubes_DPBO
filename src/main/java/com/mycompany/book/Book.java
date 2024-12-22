@@ -4,11 +4,16 @@
  */
 package com.mycompany.book;
 
+import java.util.HashMap;
+import com.mycompany.sistem.*;
+import java.util.Map;
+
 /**
  *
  * @author りおん塩田
  */
-public class Book implements IBook{
+public abstract class Book implements IBook {
+
     private String judulBuku;
     private String idBuku;
     private String namaPenulis;
@@ -18,6 +23,7 @@ public class Book implements IBook{
     private double rating;
     private String kategori;
     private boolean license;
+    private HashMap<String, Comment> comments = new HashMap<>();
 
     public Book(String idBuku, String judulBuku, String namaPenulis, String namaPenerbit, int harga, int tahunTerbit, double rating, String kategori, boolean license) {
         this.judulBuku = judulBuku;
@@ -29,6 +35,29 @@ public class Book implements IBook{
         this.rating = rating;
         this.kategori = kategori;
         this.license = license;
+    }
+
+    public void addComment(String nama, String comment, String tanggal) {
+        comments.put(nama, new Comment(comment, tanggal));
+    }
+
+    public void deleteComment(String nama) {
+        comments.remove(nama);
+    }
+
+    public void printComment() {
+        System.out.println("================Komentar " + this.judulBuku + " =================");
+        if (comments.isEmpty()) {
+            System.out.println("Komentar kosong");
+        } else {
+            for (Map.Entry<String, Comment> entry : comments.entrySet()) {
+                String key = entry.getKey();
+                Comment val = entry.getValue();
+                System.out.println(String.format("%-20s %-50s %-20s", "Nama: " + key, "Komentar: " + val.getComment(), "Tanggal: " + val.getTanggal()));
+
+            }
+        }
+
     }
 
     public String getJudulBuku() {
@@ -102,23 +131,10 @@ public class Book implements IBook{
     public void setLicense(boolean license) {
         this.license = license;
     }
-    
+
     @Override
     public String toString() {
         return String.format("%-30s %-20s %-20s %-15s %-10.2f %-10.1f",
-                             this.judulBuku, this.namaPenulis, this.namaPenerbit, this.kategori, this.harga, this.rating);
-}
-
-
-    @Override
-    public void printInfoBuku() {
+                this.judulBuku, this.namaPenulis, this.namaPenerbit, this.kategori, this.harga, this.rating);
     }
-
-    @Override
-    public double harga() {
-        return 0;
-    }
-    
-    
-    
 }

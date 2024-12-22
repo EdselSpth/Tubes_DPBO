@@ -18,7 +18,6 @@ import java.util.Scanner;
  * @author りおん塩田
  */
 public class BookManagement {
-
     public ArrayList<Book> books = new ArrayList<>();
     Scanner S = new Scanner(System.in);
     Menu menu = new Menu();
@@ -33,7 +32,7 @@ public class BookManagement {
         books.add(new Komik("KMK001", "Doraemon", "Fantasy", "Fujiko F. Fujio", "JapanComics", 20000, 2005, 8.0));
         books.add(new Majalah("MJL001", "Chips", "Teknologi", "Dedy Irvan", "Chips Company", 90000, 2007, 9.5));
     }
-
+    
     public Book getBook(int index) {
         return books.get(index);
     }
@@ -43,7 +42,6 @@ public class BookManagement {
         for (Book book : books) {
             System.out.printf("%-4d %s\n", nomor++, book);
         }
-
     }
 
     public void tambahDataBuku() {

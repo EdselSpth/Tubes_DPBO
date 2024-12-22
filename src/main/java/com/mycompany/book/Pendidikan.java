@@ -8,7 +8,7 @@ package com.mycompany.book;
  *
  * @author りおん塩田
  */
-public class Pendidikan extends Book implements IBook{
+public class Pendidikan extends Book {
     private String namaBidang;
     private double discountRate = 0.35;
 

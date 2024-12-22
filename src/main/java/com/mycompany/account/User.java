@@ -17,6 +17,8 @@ import com.mycompany.book.Majalah;
 import com.mycompany.book.Novel;
 import com.mycompany.book.Pendidikan;
 import com.mycompany.book.Sejarah;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -32,6 +34,9 @@ public class User implements IAccount {
     Pembelian P = new Pembelian();
     Perpustakaan perpus = new Perpustakaan();
     ReadBook RB = new ReadBook();
+    LocalDateTime now = LocalDateTime.now();
+    DateTimeFormatter format = DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy HH:mm:ss");
+    String tanggal = now.format(format);
 
     public User() {
         userList = new ArrayList<>();
@@ -186,7 +191,7 @@ public class User implements IAccount {
                         }
                         break;
                     case 4:
-                        Menu.menuPerpustakaan();
+                        menu.menuPerpustakaan();
                         System.out.print("Pilih Menu: ");
                         pilihan = S.nextInt();
                         S.nextLine();
@@ -212,9 +217,18 @@ public class User implements IAccount {
                                             menu.menuBacaBuku();
                                             System.out.print("Pilih Menu : ");
                                             int pilihanc41 = S.nextInt();
+                                            S.nextLine();
                                             if (pilihanc41 == 1) {
+                                                perpus.koleksiBuku.get(milihBuku2-1).printComment();
+                                                System.out.println("Tambahkan komentar...");
+                                                System.out.print("Masukkan nama:");
+                                                String nama = S.nextLine();
+                                                System.out.print("Masukkan komentar: ");
+                                                String comment = S.nextLine();
+                                                perpus.koleksiBuku.get(milihBuku2-1).addComment(nama, comment, tanggal);
+                                            } else if (pilihanc41 == 2) {
                                                 break;
-                                            } else {
+                                            }else{
                                                 System.out.println("Pilihan tidak tersedia");
                                             }
                                             break;
