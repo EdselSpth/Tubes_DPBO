@@ -42,7 +42,7 @@ public abstract class Book implements IBook {
     }
 
     public void printComment() {
-        System.out.println("================Komentar " + this.judulBuku + " =================");
+        System.out.println("================ Komentar Buku " + this.judulBuku + " =================");
         if (comments.isEmpty()) {
             System.out.println("Komentar kosong");
         } else {
