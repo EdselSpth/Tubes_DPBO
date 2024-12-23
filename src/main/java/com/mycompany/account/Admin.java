@@ -69,6 +69,7 @@ public class Admin implements IAccount {
                         BM.tambahDataBuku();
                         break;
                     case 2:
+                        menu.headerFooter();
                         System.out.println("Menu Hapus Buku");
                         BM.hapusDataBuku();
                         break;

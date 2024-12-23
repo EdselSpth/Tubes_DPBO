@@ -205,12 +205,14 @@ public class BookManagement {
     }
 
     public void hapusDataBuku() {
-        menu.FormatBukuPrint();
-        printBuku();
+        menu.headerFooter();
+        System.out.println("Daftar Buku");
+        menu.FormatBukuPrintAdmin();
+        printBukuAdmin();
         boolean ketemu = false;
-        System.out.println("Hapus Data Buku");
-        System.out.print("Masukkan ID Buku (bukan no buku): ");
+        System.out.print("Masukkan ID Buku : ");
         String idBukuHapus = S.nextLine().trim();
+        menu.headerFooter();
         for (int i = 0; i < books.size(); i++) {
             if (books.get(i).getIdBuku().equalsIgnoreCase(idBukuHapus)) {
                 ketemu = true;
