@@ -25,9 +25,10 @@ public class Main {
         while (!exit) {
             try {
                 menu.LoginMenu();
-                System.out.print("Pilih opsi: ");
+                System.out.print("Pilih opsi : ");
                 int opsi = s.nextInt();
                 s.nextLine();
+                menu.headerFooter();
                 switch (opsi) {
                     case 1:
                         admin.menuInside(admin.loginValidation());

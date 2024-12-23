@@ -38,7 +38,6 @@ public class Menu {
     }
     
     public void menuUser(){
-        headerFooter();
         System.out.println("Menu User");
         System.out.println("1. Tampilkan E-Book");
         System.out.println("2. Cari E-Book");
@@ -72,7 +71,6 @@ public class Menu {
     }
     
     public void menuKategoriBuku(){
-        headerFooter();
         System.out.println("1. Pendidikan"); 
         System.out.println("2. Sejarah");
         System.out.println("3. Novel");

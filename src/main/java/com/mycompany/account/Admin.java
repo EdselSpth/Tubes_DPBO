@@ -20,7 +20,8 @@ public class Admin implements IAccount {
     Scanner S = new Scanner(System.in);
     boolean passwordValidation = false;
     BookManagement BM = BookManagement.getInstance();
-
+    String username;
+    
     public Admin() {
         adminList = new ArrayList<>();
         adminList.add(new Account("Admin", "admin123"));
@@ -32,7 +33,7 @@ public class Admin implements IAccount {
     @Override
     public boolean loginValidation() {
         System.out.print("> Username : ");
-        String username = S.nextLine();
+        username = S.nextLine();
         System.out.print("> Password : ");
         String password = S.nextLine();
 
@@ -54,6 +55,8 @@ public class Admin implements IAccount {
     public void menuInside(boolean passwordValidation) throws Exception {
         if (passwordValidation) {
             int pilihan = 0;
+            menu.headerFooter();
+            System.out.println("Selamat Datang!! " + username);
             boolean exit = false;
             while (!exit) {
                 menu.menuAdmin();
@@ -61,6 +64,7 @@ public class Admin implements IAccount {
                 pilihan = S.nextInt();
                 switch (pilihan) {
                     case 1:
+                        menu.headerFooter();
                         System.out.println("Menu Tambah Buku");
                         BM.tambahDataBuku();
                         break;
@@ -69,6 +73,7 @@ public class Admin implements IAccount {
                         BM.hapusDataBuku();
                         break;
                     case 3:
+                        menu.headerFooter();
                         System.out.println("Menu Edit Buku");
                         BM.editDataBuku(BM);
                         break;

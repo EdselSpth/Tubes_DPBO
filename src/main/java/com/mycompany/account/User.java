@@ -37,7 +37,7 @@ public class User implements IAccount {
     LocalDateTime now = LocalDateTime.now();
     DateTimeFormatter format = DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy HH:mm:ss");
     String tanggal = now.format(format);
-
+    String username, password;
     public User() {
         userList = new ArrayList<>();
         userList.add(new Account("User123", "User123"));
@@ -48,9 +48,9 @@ public class User implements IAccount {
     @Override
     public boolean loginValidation() {
         System.out.print("> Username : ");
-        String username = S.nextLine();
+        username = S.nextLine();
         System.out.print("> Password : ");
-        String password = S.nextLine();
+        password = S.nextLine();
         for (int i = 0; i < userList.size(); i++) {
             if (username.equals(userList.get(i).getUsername()) && password.equals(userList.get(i).getPassword())) {
                 passwordValidation = true;
@@ -66,19 +66,24 @@ public class User implements IAccount {
             int pilihan = 0;
             boolean exit = false;
             int i;
+            menu.headerFooter();
+            System.out.println("Selamat Datang!! " + username);
             while (!exit) {
+                menu.headerFooter();
                 menu.menuUser();
                 System.out.print("Pilih Menu : ");
                 pilihan = S.nextInt();
                 S.nextLine();
                 switch (pilihan) {
                     case 1:
+                        menu.headerFooter();
                         System.out.println("Daftar Buku");
                         menu.FormatBukuPrint();
                         BM.printBuku();
                         System.out.print("Pilih Buku : ");
                         int milihBuku = S.nextInt();
                         S.nextLine();
+                        menu.headerFooter();
                         int index = milihBuku - 1;
 
                         if (index < 0 || index >= BM.books.size()) {
@@ -92,9 +97,11 @@ public class User implements IAccount {
                         S.nextLine();
                         switch (pilihanSistem) {
                             case 1:
+                                menu.headerFooter();
                                 BM.books.get(index).printInfoBuku();
                                 break;
                             case 2:
+                                menu.headerFooter();
                                 P.beliBuku(index, BM, perpus);
                                 break;
                             case 3:
@@ -119,9 +126,11 @@ public class User implements IAccount {
                         S.nextLine();
                         switch (pilihanSistem) {
                             case 1:
+                                menu.headerFooter();
                                 BM.books.get(index).printInfoBuku();
                                 break;
                             case 2:
+                                menu.headerFooter();
                                 P.beliBuku(index, BM, perpus);
                                 break;
                             case 3:
@@ -131,9 +140,12 @@ public class User implements IAccount {
                         }
                         break;
                     case 3:
+                        menu.headerFooter();
                         System.out.println("Pilih Kategori yang mau ditampilkan");
                         menu.menuKategoriBuku();
+                        System.out.print("Pilih Opsi : ");
                         int pilihanc3 = S.nextInt();
+                        menu.headerFooter();
                         switch (pilihanc3) {
                             case 1:
                                 System.out.println("Daftar Buku Pendidikan");
@@ -226,9 +238,9 @@ public class User implements IAccount {
                                             if (pilihanc41 == 1) {
                                                 perpus.koleksiBuku.get(milihBuku2-1).printComment();
                                                 System.out.println("Tambahkan komentar...");
-                                                System.out.print("Masukkan nama:");
+                                                System.out.print("Masukkan nama : ");
                                                 String nama = S.nextLine();
-                                                System.out.print("Masukkan komentar: ");
+                                                System.out.print("Masukkan komentar : ");
                                                 String comment = S.nextLine();
                                                 perpus.koleksiBuku.get(milihBuku2-1).addComment(nama, comment, tanggal);
                                             } else if (pilihanc41 == 2) {

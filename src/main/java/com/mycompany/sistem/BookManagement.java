@@ -68,6 +68,7 @@ public class BookManagement {
         S.nextLine();
         switch (pilihan) {
             case 1:
+                menu.headerFooter();
                 System.out.println("Tambah Buku Pendidikan");
                 System.out.print("ID Buku : ");
                 IDBuku = S.nextLine();
@@ -89,9 +90,11 @@ public class BookManagement {
                 rating = S.nextDouble();
                 S.nextLine();
                 books.add(new Pendidikan(IDBuku, judul, bidang, penulis, penerbit, harga, tahunTerbit, rating));
+                menu.headerFooter();
                 System.out.println("Buku berhasil ditambahkan");
                 break;
             case 2:
+                menu.headerFooter();
                 System.out.println("Tambah Buku Sejarah");
                 System.out.print("ID Buku : ");
                 IDBuku = S.nextLine();
@@ -115,9 +118,11 @@ public class BookManagement {
                 rating = S.nextDouble();
                 S.nextLine();
                 books.add(new Sejarah(IDBuku, judul, periodeSejarah, lokasiSejarah, penulis, penerbit, harga, tahunTerbit, rating));
+                menu.headerFooter();
                 System.out.println("Buku berhasil ditambahkan");
                 break;
             case 3:
+                menu.headerFooter();
                 System.out.println("Tambah Buku Novel");
                 System.out.print("ID Buku : ");
                 IDBuku = S.nextLine();
@@ -139,9 +144,11 @@ public class BookManagement {
                 rating = S.nextDouble();
                 S.nextLine();
                 books.add(new Novel(IDBuku, judul, genre, penulis, penerbit, harga, tahunTerbit, rating));
+                menu.headerFooter();
                 System.out.println("Buku berhasil ditambahkan");
                 break;
             case 4:
+                menu.headerFooter();
                 System.out.println("Tambah Buku Novel");
                 System.out.print("ID Buku : ");
                 IDBuku = S.nextLine();
@@ -163,9 +170,11 @@ public class BookManagement {
                 rating = S.nextDouble();
                 S.nextLine();
                 books.add(new Komik(IDBuku, judul, genre, penulis, penerbit, harga, tahunTerbit, rating));
+                menu.headerFooter();
                 System.out.println("Buku berhasil ditambahkan");
                 break;
             case 5:
+                menu.headerFooter();
                 System.out.println("Tambah Buku Novel");
                 System.out.print("ID Buku : ");
                 IDBuku = S.nextLine();
@@ -187,6 +196,7 @@ public class BookManagement {
                 rating = S.nextDouble();
                 S.nextLine();
                 books.add(new Majalah(IDBuku, judul, jenisMajalah, penulis, penerbit, harga, tahunTerbit, rating));
+                menu.headerFooter();
                 System.out.println("Buku berhasil ditambahkan");
                 break;
             default:
@@ -215,6 +225,8 @@ public class BookManagement {
     }
 
     public void editDataBuku(BookManagement BM) throws Exception {
+        menu.headerFooter();
+        System.out.println("Daftar Buku");
         menu.FormatBukuPrintAdmin();
         printBukuAdmin();
         System.out.println("Edit Data Buku");
@@ -225,44 +237,45 @@ public class BookManagement {
             if (books.get(i).getIdBuku().equalsIgnoreCase(idBukuEdit)) {
                 ketemu = true;
                 menu.pilihanEditBukuPendidikan();
-                System.out.print(">Pilih opsi");
+                System.out.print("Pilih opsi : ");
                 int opsi = S.nextInt();
                 S.nextLine();
+                menu.headerFooter();
                 switch (opsi) {
                     case 1:
-                        System.out.print(">Judul Buku Baru: ");
+                        System.out.print("Judul Buku Baru : ");
                         judul = S.nextLine();
                         books.get(i).setJudulBuku(judul);
                         break;
                     case 2:
-                        System.out.print(">Penulis Buku Baru: ");
+                        System.out.print("Penulis Buku Baru : ");
                         penulis = S.nextLine();
                         books.get(i).setNamaPenulis(penulis);
                         break;
                     case 3:
-                        System.out.print(">Penerbit Buku Baru: ");
+                        System.out.print("Penerbit Buku Baru : ");
                         penerbit = S.nextLine();
                         books.get(i).setNamaPenerbit(penerbit);
                         break;
                     case 4:
-                        System.out.print(">Kategori Buku Baru: ");
+                        System.out.print("Kategori Buku Ba0ru : ");
                         genre = S.nextLine();
                         books.get(i).setKategori(genre);
                         break;
                     case 5:
-                        System.out.print(">Harga Buku Baru: ");
+                        System.out.print("Harga Buku Baru : ");
                         harga = S.nextInt();
                         S.nextLine();
                         books.get(i).setHarga(harga);
                         break;
                     case 6:
-                        System.out.print(">Tahun Terbit Buku Baru: ");
+                        System.out.print("Tahun Terbit Buku Baru : ");
                         tahunTerbit = S.nextInt();
                         S.nextLine();
                         books.get(i).setTahunTerbit(tahunTerbit);
                         break;
                     case 7:
-                        System.out.print(">Rating Buku Baru: ");
+                        System.out.print("Rating Buku Baru : ");
                         rating = S.nextDouble();
                         S.nextLine();
                         books.get(i).setRating(rating);
@@ -275,6 +288,7 @@ public class BookManagement {
             }
         }
         if (ketemu) {
+            menu.headerFooter();
             System.out.println("Buku berhasil diedit");
         } else {
             throw new Exception("Buku tidak ditemukan");
