@@ -29,8 +29,14 @@ public class BookManagement {
     public BookManagement() {
         
         books.add(new Novel("Nov001", "Bungo Stray Dogs", "Fantasy", "Kafka Asagiri", "Kadokawa", 45000, 2020, 10.0));
+        books.add(new Novel("Nov002", "Touche", "Misteri", "Windy Dewi", "Gramedia", 30000, 2019, 10.0));
+        books.add(new Novel("Nov003", "Bliss", "Misteri", "Joe Mama", "Little Wood", 60000, 2020, 9.5));
         books.add(new Pendidikan("Pen001", "Matematika : Aljabar", "Matematika", "Alisha Raven", "MathGroup", 4000, 2015, 7.5));
+        books.add(new Pendidikan("Pen002", "HumanBiology", "Biologi", "Raven", "Bio", 200000, 2004, 10.0));
+        books.add(new Pendidikan("Pen003", "Proggramming", "Matematika", "Bunyamin", "Tel-U", 130000, 2024, 8.0));
         books.add(new Sejarah("Sej001", "World History", "Past-Present", "Dunia", "Adolf Hitler", "German Corpse", 80000, 1955, 10.0));
+        books.add(new Sejarah("Sej002", "Pentagram", "September-2001", "Amerika", "Joe Liben", "American Hater", 800000, 2004, 10.0));
+        books.add(new Sejarah("Sej003", "Max Haveelar", "Penjajahan Kolonialisme Belanda", "Indonesia", "Multatuli", "Gramedia", 150000, 2004, 10.0));
         books.add(new Komik("KMK001", "Doraemon", "Fantasy", "Fujiko F. Fujio", "JapanComics", 20000, 2005, 8.0));
         books.add(new Majalah("MJL001", "Chips", "Teknologi", "Dedy Irvan", "Chips Company", 90000, 2007, 9.5));
     }

@@ -100,7 +100,19 @@ public class User implements IAccount {
                                 }
                                 menu.headerFooter();
                                 BM.books.get(index).printInfoBuku();
-                                break;
+                                menu.headerFooter();
+                                System.out.println("Mau Beli Buku?");
+                                System.out.println("Iya");
+                                System.out.println("Tidak");
+                                System.out.print("Konfirmasi : ");
+                                String confirm = S.nextLine();
+                                if(confirm.equalsIgnoreCase("Iya") || confirm.equalsIgnoreCase("iya")){
+                                    menu.headerFooter();
+                                    P.beliBuku(index, BM, perpus);
+                                    break;
+                                } else {
+                                    break;
+                                }
                             case 2:
                                 menu.headerFooter();
                                 System.out.println("Beli Buku");
