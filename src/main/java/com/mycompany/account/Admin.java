@@ -25,7 +25,7 @@ public class Admin implements IAccount {
     public Admin() {
         adminList = new ArrayList<>();
         adminList.add(new Account("Admin", "admin123"));
-        adminList.add(new Account("////", "////"));
+        adminList.add(new Account("SelametKopling", "MenyalaKoplingku"));
         adminList.add(new Account("Kobo1212", "Kobo123"));
 
     }

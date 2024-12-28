@@ -39,7 +39,7 @@ public class Menu {
     
     public void menuUser(){
         System.out.println("Menu User");
-        System.out.println("1. Tampilkan E-Book");
+        System.out.println("1. Daftar E-Book");
         System.out.println("2. Cari E-Book");
         System.out.println("3. Tampilkan E-Book berdasarkan kategori");
         System.out.println("4. Perpustakaan Pengguna");

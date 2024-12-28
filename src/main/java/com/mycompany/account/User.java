@@ -38,11 +38,12 @@ public class User implements IAccount {
     DateTimeFormatter format = DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy HH:mm:ss");
     String tanggal = now.format(format);
     String username, password;
+    
     public User() {
         userList = new ArrayList<>();
         userList.add(new Account("User123", "User123"));
         userList.add(new Account("Rinitial", "RintialPassword"));
-        userList.add(new Account("ZetaZeta", "VestiaZeta"));
+        userList.add(new Account("AgusKopling", "Agus@RumahBaru"));
     }
 
     @Override
@@ -65,7 +66,7 @@ public class User implements IAccount {
         if (passwordValidation) {
             int pilihan = 0;
             boolean exit = false;
-            int i;
+            int i, index = 99999, milihBuku = 999;
             menu.headerFooter();
             System.out.println("Selamat Datang!! " + username);
             while (!exit) {
@@ -80,17 +81,7 @@ public class User implements IAccount {
                         System.out.println("Daftar Buku");
                         menu.FormatBukuPrint();
                         BM.printBuku();
-                        System.out.print("Pilih Buku : ");
-                        int milihBuku = S.nextInt();
-                        S.nextLine();
                         menu.headerFooter();
-                        int index = milihBuku - 1;
-
-                        if (index < 0 || index >= BM.books.size()) {
-                            System.out.println("Pilihan Buku tidak ada");
-                            break;
-                        }
-
                         menu.menuBeliBuku();
                         System.out.print("Pilih Menu : ");
                         int pilihanSistem = S.nextInt();
@@ -98,9 +89,28 @@ public class User implements IAccount {
                         switch (pilihanSistem) {
                             case 1:
                                 menu.headerFooter();
+                                System.out.println("Lihat Informasi Buku");
+                                System.out.print("Pilih Buku : ");
+                                milihBuku = S.nextInt();
+                                S.nextLine();
+                                index = milihBuku - 1;
+                                if (index < 0 || index >= BM.books.size()) {
+                                    System.out.println("Pilihan Buku tidak ada");
+                                    break;
+                                }
+                                menu.headerFooter();
                                 BM.books.get(index).printInfoBuku();
                                 break;
                             case 2:
+                                menu.headerFooter();
+                                System.out.println("Beli Buku");
+                                System.out.print("Pilih Buku : ");
+                                milihBuku = S.nextInt();
+                                index = milihBuku - 1;
+                                if (index < 0 || index >= BM.books.size()) {
+                                    System.out.println("Pilihan Buku tidak ada");
+                                    break;
+                                }
                                 menu.headerFooter();
                                 P.beliBuku(index, BM, perpus);
                                 break;
