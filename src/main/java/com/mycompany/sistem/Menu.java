@@ -65,6 +65,11 @@ public class Menu {
         System.out.printf("%-4s %-30s %-20s %-20s %-15s %-10s %-10s\n","No", "Judul Buku", "Penulis Buku", "Penerbit", "Kategori", "Harga", "Rating");
     }
     
+    public void FormatBukuPrintPendidikan() {
+        System.out.printf("%-4s %-30s %-20s %-20s %-15s %-10s %-10s %-10s\n","No", "Judul Buku", "Penulis Buku", "Penerbit", "Kategori", "Harga", "Rating", "Bidang");
+    }
+    
+    
     public void FormatBukuPrintAdmin() {
         System.out.printf("%-4s %-10s %-30s %-20s %-20s %-15s %-10s %-10s\n",
                       "No", "ID Buku", "Judul Buku", "Penulis Buku", "Penerbit", "Kategori", "Harga", "Rating");

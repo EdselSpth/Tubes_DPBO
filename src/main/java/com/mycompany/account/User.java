@@ -171,11 +171,13 @@ public class User implements IAccount {
                         switch (pilihanc3) {
                             case 1:
                                 System.out.println("Daftar Buku Pendidikan");
-                                menu.FormatBukuPrint();
+                                menu.FormatBukuPrintPendidikan();
                                 int no = 1;
+                                
                                 for (Book book : BM.books) {
                                     if (book instanceof Pendidikan) {
-                                        System.out.printf("%-4d %s\n", no, book);
+                                        Pendidikan p = (Pendidikan)  book;
+                                        System.out.printf("%-4d %s\n", no, p.toString() + p.getNamaBidang());
                                         no++;
                                     }
                                 }
@@ -186,7 +188,8 @@ public class User implements IAccount {
                                 no = 1;
                                 for (Book book : BM.books) {
                                     if (book instanceof Sejarah) {
-                                        System.out.printf("%-4d %s\n", no, book);
+                                        Sejarah s = (Sejarah) book;
+                                        System.out.printf("%-4d %s\n", no, s.toString());
                                         no++;
                                     }
                                 }
@@ -197,7 +200,8 @@ public class User implements IAccount {
                                 no = 1;
                                 for (Book book : BM.books) {
                                     if (book instanceof Novel) {
-                                        System.out.printf("%-4d %s\n", no, book);
+                                        Novel n = (Novel) book;
+                                        System.out.printf("%-4d %s\n", no, n.toString());
                                         no++;
                                     }
                                 }
@@ -208,7 +212,8 @@ public class User implements IAccount {
                                 no = 1;
                                 for (Book book : BM.books) {
                                     if (book instanceof Komik) {
-                                        System.out.printf("%-4d %s\n", no, book);
+                                        Komik k = (Komik) book;
+                                        System.out.printf("%-4d %s\n", no, k.toString());
                                         no++;
                                     }
                                 }
@@ -219,7 +224,8 @@ public class User implements IAccount {
                                 no = 1;
                                 for (Book book : BM.books) {
                                     if (book instanceof Majalah) {
-                                        System.out.printf("%-4d %s\n", no, book);
+                                        Majalah m =(Majalah) book;
+                                        System.out.printf("%-4d %s\n", no, m.toString());
                                         no++;
                                     }
                                 }
