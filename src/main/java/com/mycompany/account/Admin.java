@@ -8,6 +8,7 @@ import com.mycompany.sistem.BookManagement;
 import java.util.ArrayList;
 import java.util.Scanner;
 import com.mycompany.sistem.Menu;
+import java.util.InputMismatchException;
 
 /**
  *
@@ -62,30 +63,36 @@ public class Admin implements IAccount {
                 while (!exit) {
                     menu.menuAdmin();
                     System.out.print("Pilih Menu : ");
-                    pilihan = S.nextInt();
-                    switch (pilihan) {
-                        case 1:
-                            menu.headerFooter();
-                            System.out.println("Menu Tambah Buku");
-                            BM.tambahDataBuku();
-                            break;
-                        case 2:
-                            menu.headerFooter();
-                            System.out.println("Menu Hapus Buku");
-                            BM.hapusDataBuku();
-                            break;
-                        case 3:
-                            menu.headerFooter();
-                            System.out.println("Menu Edit Buku");
-                            BM.editDataBuku(BM);
-                            break;
-                        case 4:
-                            exit = true;
-                            break;
-                        default:
-                            System.out.println("Masukkan tidak valid");
-                            break;
+                    try {
+                        pilihan = S.nextInt();
+                        switch (pilihan) {
+                            case 1:
+                                menu.headerFooter();
+                                System.out.println("Menu Tambah Buku");
+                                BM.tambahDataBuku();
+                                break;
+                            case 2:
+                                menu.headerFooter();
+                                System.out.println("Menu Hapus Buku");
+                                BM.hapusDataBuku();
+                                break;
+                            case 3:
+                                menu.headerFooter();
+                                System.out.println("Menu Edit Buku");
+                                BM.editDataBuku(BM);
+                                break;
+                            case 4:
+                                exit = true;
+                                break;
+                            default:
+                                System.out.println("Masukkan tidak valid");
+                                break;
+                        }
+                    } catch (InputMismatchException ex){
+                        System.out.println("Error, Harap Masukkan Input Angka");
+                        S.nextLine();
                     }
+
                 }
             } else {
                 throw new Exception("Username atau Password Salah");
