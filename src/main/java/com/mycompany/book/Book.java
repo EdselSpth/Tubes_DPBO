@@ -95,7 +95,8 @@ public abstract class Book implements IBook {
     public void setHarga(int harga) {
         this.harga = harga;
     }
-
+    
+    
     public int getTahunTerbit() {
         return tahunTerbit;
     }

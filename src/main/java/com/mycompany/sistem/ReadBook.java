@@ -9,7 +9,6 @@ package com.mycompany.sistem;
  * @author りおん塩田
  */
 public class ReadBook {
-    private String tanggalTerakhirBaca;
     
     public void bacaBuku() {
         System.out.println("Membaca buku...");
@@ -17,13 +16,5 @@ public class ReadBook {
 
     public void searchBuku() {
         System.out.println("Mencari buku...");
-    }
-
-    public void setTerakhirBaca(String tanggal) {
-        this.tanggalTerakhirBaca = tanggal;
-    }
-
-    public String getTanggalTerakhirBaca() {
-        return this.tanggalTerakhirBaca;
     }
 }

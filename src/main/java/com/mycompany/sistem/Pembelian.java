@@ -26,7 +26,7 @@ public class Pembelian {
 
     public void beliBuku(int index, BookManagement BM, Perpustakaan perpus) {
         try {
-            if (index < BM.books.size() && index >= 0) {
+            if (index < BM.books.size() && index >= 0 ) {
                 BM.books.get(index).setLicense(true);
                 perpus.tambahBuku(index, BM.getBook(index));
                 System.out.println("Pembelian E-Book Berhasil");
