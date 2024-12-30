@@ -21,7 +21,7 @@ public class Admin implements IAccount {
     boolean passwordValidation = false;
     BookManagement BM = BookManagement.getInstance();
     String username;
-    
+
     public Admin() {
         adminList = new ArrayList<>();
         adminList.add(new Account("Admin123", "Admin123"));
@@ -53,42 +53,45 @@ public class Admin implements IAccount {
      */
     @Override
     public void menuInside(boolean passwordValidation) throws Exception {
-        if (passwordValidation) {
-            int pilihan = 0;
-            menu.headerFooter();
-            System.out.println("Selamat Datang!! " + username);
-            boolean exit = false;
-            while (!exit) {
-                menu.menuAdmin();
-                System.out.print("Pilih Menu : ");
-                pilihan = S.nextInt();
-                switch (pilihan) {
-                    case 1:
-                        menu.headerFooter();
-                        System.out.println("Menu Tambah Buku");
-                        BM.tambahDataBuku();
-                        break;
-                    case 2:
-                        menu.headerFooter();
-                        System.out.println("Menu Hapus Buku");
-                        BM.hapusDataBuku();
-                        break;
-                    case 3:
-                        menu.headerFooter();
-                        System.out.println("Menu Edit Buku");
-                        BM.editDataBuku(BM);
-                        break;
-                    case 4:
-                        exit = true;
-                        break;
-                    default:
-                        System.out.println("Masukkan tidak valid");
+        try {
+            if (passwordValidation) {
+                int pilihan = 0;
+                menu.headerFooter();
+                System.out.println("Selamat Datang!! " + username);
+                boolean exit = false;
+                while (!exit) {
+                    menu.menuAdmin();
+                    System.out.print("Pilih Menu : ");
+                    pilihan = S.nextInt();
+                    switch (pilihan) {
+                        case 1:
+                            menu.headerFooter();
+                            System.out.println("Menu Tambah Buku");
+                            BM.tambahDataBuku();
+                            break;
+                        case 2:
+                            menu.headerFooter();
+                            System.out.println("Menu Hapus Buku");
+                            BM.hapusDataBuku();
+                            break;
+                        case 3:
+                            menu.headerFooter();
+                            System.out.println("Menu Edit Buku");
+                            BM.editDataBuku(BM);
+                            break;
+                        case 4:
+                            exit = true;
+                            break;
+                        default:
+                            System.out.println("Masukkan tidak valid");
+                            break;
+                    }
                 }
+            } else {
+                throw new Exception("Username atau Password Salah");
             }
-        } else {
-            throw new Exception("Username atau Password Salah");
+        } catch (Exception E) {
+            System.out.println(E.getMessage());
         }
-
     }
-
 }

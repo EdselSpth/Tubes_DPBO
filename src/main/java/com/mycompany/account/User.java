@@ -331,6 +331,7 @@ public class User implements IAccount {
                         break;
                     default:
                         System.out.println("Pilihan Menu Tidak Ada");
+                        break;
                 }
             }
         } else {
