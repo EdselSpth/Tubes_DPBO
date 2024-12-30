@@ -18,6 +18,7 @@ import java.util.Scanner;
  * @author りおん塩田
  */
 public class BookManagement {
+
     private static BookManagement instance;
     public ArrayList<Book> books = new ArrayList<>();
     Scanner S = new Scanner(System.in);
@@ -27,7 +28,7 @@ public class BookManagement {
     double rating;
 
     public BookManagement() {
-        
+
         books.add(new Novel("Nov001", "Bungo Stray Dogs", "Fantasy", "Kafka Asagiri", "Kadokawa", 45000, 2020, 10.0));
         books.add(new Novel("Nov002", "Touche", "Misteri", "Windy Dewi", "Gramedia", 30000, 2019, 10.0));
         books.add(new Novel("Nov003", "Bliss", "Misteri", "Joe Mama", "Little Wood", 60000, 2020, 9.5));
@@ -40,14 +41,14 @@ public class BookManagement {
         books.add(new Komik("KMK001", "Doraemon", "Fantasy", "Fujiko F. Fujio", "JapanComics", 20000, 2005, 8.0));
         books.add(new Majalah("MJL001", "Chips", "Teknologi", "Dedy Irvan", "Chips Company", 90000, 2007, 9.5));
     }
-    
+
     public static BookManagement getInstance() {
         if (instance == null) {
             instance = new BookManagement();
         }
         return instance;
     }
-    
+
     public Book getBook(int index) {
         return books.get(index);
     }
@@ -58,7 +59,7 @@ public class BookManagement {
             System.out.printf("%-4d %s\n", nomor++, book);
         }
     }
-    
+
     public void printBukuAdmin() {
         int nomor = 1;
         for (Book book : books) {
@@ -66,7 +67,7 @@ public class BookManagement {
         }
     }
 
-    public void tambahDataBuku() {
+    public void tambahDataBuku() throws Exception {
         System.out.println("Pilih kategori buku");
         menu.menuKategoriBuku();
         System.out.print("Pilih opsi : ");
@@ -95,6 +96,9 @@ public class BookManagement {
                 System.out.print("Rating : ");
                 rating = S.nextDouble();
                 S.nextLine();
+                if (harga < 0 || tahunTerbit < 0 || rating < 0) {
+                    throw new Exception("Error, Inputan harga, Tahun Terbit atau Rating tidak bisa negatif");
+                }
                 books.add(new Pendidikan(IDBuku, judul, bidang, penulis, penerbit, harga, tahunTerbit, rating));
                 menu.headerFooter();
                 System.out.println("Buku berhasil ditambahkan");
@@ -123,6 +127,9 @@ public class BookManagement {
                 System.out.print("Rating : ");
                 rating = S.nextDouble();
                 S.nextLine();
+                if (harga < 0 || tahunTerbit < 0 || rating < 0) {
+                    throw new Exception("Error, Inputan harga, Tahun Terbit atau Rating tidak bisa negatif");
+                }
                 books.add(new Sejarah(IDBuku, judul, periodeSejarah, lokasiSejarah, penulis, penerbit, harga, tahunTerbit, rating));
                 menu.headerFooter();
                 System.out.println("Buku berhasil ditambahkan");
@@ -149,6 +156,9 @@ public class BookManagement {
                 System.out.print("Rating : ");
                 rating = S.nextDouble();
                 S.nextLine();
+                if (harga < 0 || tahunTerbit < 0 || rating < 0) {
+                    throw new Exception("Error, Inputan harga, Tahun Terbit atau Rating tidak bisa negatif");
+                }
                 books.add(new Novel(IDBuku, judul, genre, penulis, penerbit, harga, tahunTerbit, rating));
                 menu.headerFooter();
                 System.out.println("Buku berhasil ditambahkan");
@@ -175,6 +185,9 @@ public class BookManagement {
                 System.out.print("Rating : ");
                 rating = S.nextDouble();
                 S.nextLine();
+                if (harga < 0 || tahunTerbit < 0 || rating < 0) {
+                    throw new Exception("Error, Inputan harga, Tahun Terbit atau Rating tidak bisa negatif");
+                }
                 books.add(new Komik(IDBuku, judul, genre, penulis, penerbit, harga, tahunTerbit, rating));
                 menu.headerFooter();
                 System.out.println("Buku berhasil ditambahkan");
@@ -201,6 +214,9 @@ public class BookManagement {
                 System.out.print("Rating : ");
                 rating = S.nextDouble();
                 S.nextLine();
+                if (harga < 0 || tahunTerbit < 0 || rating < 0) {
+                    throw new Exception("Error, Inputan harga, Tahun Terbit atau Rating tidak bisa negatif");
+                }
                 books.add(new Majalah(IDBuku, judul, jenisMajalah, penulis, penerbit, harga, tahunTerbit, rating));
                 menu.headerFooter();
                 System.out.println("Buku berhasil ditambahkan");
@@ -274,18 +290,27 @@ public class BookManagement {
                         System.out.print("Harga Buku Baru : ");
                         harga = S.nextInt();
                         S.nextLine();
+                        if (harga < 0) {
+                            throw new Exception("Error, Harga tidak bisa negatif");
+                        }
                         books.get(i).setHarga(harga);
                         break;
                     case 6:
                         System.out.print("Tahun Terbit Buku Baru : ");
                         tahunTerbit = S.nextInt();
                         S.nextLine();
+                        if (tahunTerbit < 0) {
+                            throw new Exception("Error, Tahun Terbit tidak bisa negatif");
+                        }
                         books.get(i).setTahunTerbit(tahunTerbit);
                         break;
                     case 7:
                         System.out.print("Rating Buku Baru : ");
                         rating = S.nextDouble();
                         S.nextLine();
+                        if (rating < 0) {
+                            throw new Exception("Error, Rating tidak bisa negatif");
+                        }
                         books.get(i).setRating(rating);
                         break;
                     case 8:
@@ -303,11 +328,11 @@ public class BookManagement {
         }
 
     }
-    
-    public int cariBuku(String judul){
+
+    public int cariBuku(String judul) {
         for (int i = 0; i < books.size(); i++) {
             Book get = books.get(i);
-            if (books.get(i).getJudulBuku().equalsIgnoreCase(judul)){
+            if (books.get(i).getJudulBuku().equalsIgnoreCase(judul)) {
                 return i;
             }
         }
